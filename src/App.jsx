@@ -5,6 +5,7 @@ import { ThemeProvider } from '@emotion/react'
 import RouterConfig from 'router'
 import theme from 'styles/theme'
 import GlobalStyle from 'styles/GlobalStyle'
+import './App.css'
 
 const App = () => (
 	<>

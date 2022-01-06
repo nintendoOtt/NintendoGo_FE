@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .mainFont {
+        font-family:"main";
+        color: #6c5ce7;
+    }
+
+    .logoFont {
+        font-family:"logo";
+        font-size: 25px;
+        font-weight: 700;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #6c5ce7;
+    }
+
+    .linkFont {
+        font-family:"link"
+    }
+
+}
