@@ -1,12 +1,13 @@
-import { useEffect } from 'react'
+import { lazy, useEffect } from 'react'
 import { Route, Routes, useNavigate, useLocation } from 'react-router-dom'
 
 import HostLayout from 'components/layout/HostLayout'
-import HostInit from './HostInit'
-import HostBank from './HostBank'
-import HostNum from './HostNum'
-import HostEmail from './HostEmail'
-import HostSuccess from './HostSuccess'
+
+const HostInit = lazy(() => import('pages/HostPage/HostInit'))
+const HostBank = lazy(() => import('pages/HostPage/HostBank'))
+const HostNum = lazy(() => import('pages/HostPage/HostNum'))
+const HostEmail = lazy(() => import('pages/HostPage/HostEmail'))
+const HostSuccess = lazy(() => import('pages/HostPage/HostSuccess'))
 
 // 가격(init) -> 은행선택(bank) -> 계좌입력(num) -> 닌텐도 아이디(email) -> 종료
 const HostPage = () => {

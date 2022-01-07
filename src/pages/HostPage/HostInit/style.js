@@ -3,9 +3,18 @@ import { Card, Button } from 'styles/common'
 
 export const InitCard = styled(Card)`
 	.init-title {
+		display: flex;
+		align-items: center;
+		gap: 5px;
 		padding: 20px 30px;
-		font-size: ${({ theme }) => theme.fontSizes.xxxl};
-		font-weight: 600;
+		> img {
+			width: 35px;
+			height: 35px;
+		}
+		> h2 {
+			font-size: ${({ theme }) => theme.fontSizes.xxxl};
+			font-weight: 600;
+		}
 	}
 	.init-content {
 		padding: 30px;

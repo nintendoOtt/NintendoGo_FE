@@ -11,6 +11,13 @@ export const Button = styled.button`
 	&:hover {
 		filter: brightness(80%);
 	}
+	&:disabled {
+		background-color: #ccc;
+		cursor: default;
+		&:hover {
+			filter: brightness(100%);
+		}
+	}
 `
 
 export const Card = styled.div`

@@ -10,8 +10,17 @@ export const BankCard = styled(Card)`
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
-		h2 {
-			font-size: ${({ theme }) => theme.fontSizes.xxxl};
+		.bank-title-group {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			img {
+				width: 35px;
+				height: 35px;
+			}
+			h2 {
+				font-size: ${({ theme }) => theme.fontSizes.xxxl};
+			}
 		}
 		span {
 			font-size: ${({ theme }) => theme.fontSizes.base};

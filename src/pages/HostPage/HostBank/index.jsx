@@ -5,14 +5,9 @@ import { BankCard, BankItemCard, PrevButton } from './style'
 const HostBank = () => {
 	const navigate = useNavigate()
 
-	const onClickToPrev = useCallback(() => {
-		navigate('/host/init')
-	}, [navigate])
-
+	const onClickToPrev = useCallback(() => navigate(-1), [navigate])
 	const onClickToNext = useCallback(
-		bankId => () => {
-			navigate(`/host/num/${bankId}`)
-		},
+		bankId => () => navigate(`/host/num/${bankId}`),
 		[navigate]
 	)
 
@@ -34,7 +29,10 @@ const HostBank = () => {
 		<>
 			<BankCard>
 				<div className="bank-title">
-					<h2>✏ 정산받을 계좌를 선택해주세요!</h2>
+					<div className="bank-title-group">
+						<img src="/img/icon/pencil.png" alt="pencil" />
+						<h2>정산받을 계좌를 선택해주세요!</h2>
+					</div>
 					<span>안전을 위해서 본인명의 계좌를 사용해주세요! </span>
 				</div>
 				<div className="bank-grid">

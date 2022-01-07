@@ -1,20 +1,24 @@
-import { useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Input } from 'styles/common'
 
+import useInput from 'hooks/useInput'
+import { Input } from 'styles/common'
 import { ButtonGroup, NumButton, NumCard } from './style'
 
 const HostNum = () => {
 	const navigate = useNavigate()
 	const { id } = useParams()
 
-	const onClickToPrev = useCallback(() => {
-		navigate('/host/bank')
-	}, [navigate])
+	const [account, onChangeAccount] = useInput()
+	const [valid, setValid] = useState(false)
 
-	const onClickToNext = useCallback(() => {
-		navigate('/host/email')
-	}, [navigate])
+	const onClickToPrev = useCallback(() => navigate(-1), [navigate])
+	const onClickToNext = useCallback(() => navigate('/host/email'), [navigate])
+
+	useEffect(() => {
+		if (account) setValid(true)
+		else setValid(false)
+	}, [account])
 
 	return (
 		<>
@@ -28,11 +32,19 @@ const HostNum = () => {
 						안전을 위해서 본인명의 계좌를 사용해주세요!
 					</span>
 				</div>
-				<Input placeholder="계좌 번호를 입력해주세요!" />
+				<Input
+					value={account}
+					onChange={onChangeAccount}
+					placeholder="계좌 번호를 입력해주세요!"
+				/>
 			</NumCard>
 			<ButtonGroup>
-				<NumButton onClick={onClickToPrev}>prev</NumButton>
-				<NumButton onClick={onClickToNext}>next</NumButton>
+				<NumButton bgColor="#eee" onClick={onClickToPrev}>
+					전 단계로 돌아가기
+				</NumButton>
+				<NumButton onClick={onClickToNext} disabled={!valid}>
+					다음 단계로 넘어가기
+				</NumButton>
 			</ButtonGroup>
 		</>
 	)

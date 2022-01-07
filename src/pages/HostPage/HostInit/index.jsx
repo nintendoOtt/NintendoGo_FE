@@ -7,14 +7,15 @@ import { InitCard, KaKaoButton } from './style'
 const HostInit = () => {
 	const navigate = useNavigate()
 
-	const onClickToNext = useCallback(() => {
-		navigate('/host/bank')
-	}, [navigate])
+	const onClickToNext = useCallback(() => navigate('/host/bank'), [navigate])
 
 	return (
 		<>
 			<InitCard>
-				<h2 className="init-title">📣 파티 이용료를 안내드립니다!</h2>
+				<div className="init-title">
+					<img src="/img/icon/speaker.png" alt="speaker" />
+					<h2>파티 이용료를 안내드립니다!</h2>
+				</div>
 				<Divide />
 				<div className="init-content">
 					<div className="init-content-item base">

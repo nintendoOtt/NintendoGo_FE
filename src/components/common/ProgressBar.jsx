@@ -9,9 +9,28 @@ const Container = styled.div`
 	> div {
 		width: ${({ percent }) => percent}%;
 		height: 100%;
-		background-color: ${({ theme }) => theme.colors.primary};
+		background: linear-gradient(
+			-45deg,
+			${({ theme }) => theme.colors.primary},
+			${({ theme }) => theme.colors.secondary},
+			#3498db,
+			#2980b9
+		);
+		background-size: 200% 200%;
+		animation: gradientAnimation 10s ease infinite;
 		border-radius: inherit;
 		transition: 0.3s;
+	}
+	@keyframes gradientAnimation {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
 	}
 `
 

@@ -7,6 +7,13 @@ import ProgressBar from 'components/common/ProgressBar'
 import Footer from 'components/common/Footer'
 
 const Container = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+`
+
+const HostBox = styled.div`
 	width: 100%;
 	max-width: 812px;
 	margin: 0 auto;
@@ -21,13 +28,6 @@ const Container = styled.div`
 		font-size: ${({ theme }) => theme.fontSizes.titleSize};
 		font-weight: 500;
 	}
-`
-
-const Test = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	min-height: 100vh;
 `
 
 const HostLayout = ({ children }) => {
@@ -46,29 +46,28 @@ const HostLayout = ({ children }) => {
 				return { title: titleList[0], percent: 20 }
 			case '/host/bank':
 				return { title: titleList[1], percent: 40 }
-			case '/host/num':
-				return { title: titleList[2], percent: 60 }
 			case '/host/email':
 				return { title: titleList[3], percent: 80 }
 			case '/host/success':
 				return { title: titleList[4], percent: 100 }
 			default:
-				return null
+				// num page
+				return { title: titleList[2], percent: 60 }
 		}
 	}, [location.pathname])()
 
 	return (
-		<Test>
-			<Container>
+		<Container>
+			<HostBox>
 				<div className="logo">
 					<Logo />
 				</div>
 				<span className="title">{routerData?.title}</span>
 				<ProgressBar percent={routerData?.percent} />
 				{children}
-			</Container>
+			</HostBox>
 			<Footer />
-		</Test>
+		</Container>
 	)
 }
 
