@@ -5,7 +5,7 @@ const config = {
 	  cid: "TC0ONETIME",
 	  partner_order_id: "partner_order_id",
 	  partner_user_id: "partner_user_id",
-	  item_name: "동대문엽기떡볶이",
+	  item_name: "닌텐도ott",
 	  quantity: 1,
 	  total_amount: 22000,
 	  vat_amount: 0,
