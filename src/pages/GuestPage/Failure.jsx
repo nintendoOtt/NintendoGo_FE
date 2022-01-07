@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Success() {
+function Failure() {
     return (
         <div>
-            결제성공
+            결제실패
         </div>
     )
 }
 
-export default Success
+export default Failure
