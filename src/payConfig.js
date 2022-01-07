@@ -11,8 +11,8 @@ const config = {
 	  vat_amount: 0,
 	  tax_free_amount: 0,
 	  approval_url: "http://localhost:3000/guest/success",
-	  fail_url: "http://localhost:3000",
-	  cancel_url: "http://localhost:3000",
+	  fail_url: "http://localhost:3000/guest/failure",
+	  cancel_url: "http://localhost:3000/guest/cancel",
 	},
 };
 
