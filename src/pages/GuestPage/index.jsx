@@ -5,7 +5,7 @@ import Init from './Init'
 import Success from './Success'
 import Cancel from './Cancel'
 import Failure from './Failure'
-import AppLayout from '../layout/AppLayout'
+import AppLayout from '../../components/layout/AppLayout'
 
 
 function GuestPage() {

@@ -1,20 +1,14 @@
 /* eslint-disable arrow-body-style */
 
+import Logo from './Logo'
+
 const Header = () => {
 	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=49ef17e43b545af9269b7cb417c9db6e&redirect_uri=http://localhost:3000/login&response_type=code`
 
 	return (
 		<div className="border shadow-md bg-white">
 			<div className="flex items-center justify-between py-3 px-3 max-w-6xl xl:mx-auto">
-				{/* left (logo) */}
-				<div className="relative w-24 flex">
-					{/* <Image src="/logo.png" alt="logo" layout='fill'/> */}
-					<button>
-						<a href="/">
-							<div className="logoFont font-serif">Nintendo</div>
-						</a>
-					</button>
-				</div>
+				<Logo />
 
 				{/* middle */}
 				<div className="hidden lg:flex">
