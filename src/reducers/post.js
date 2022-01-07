@@ -5,6 +5,7 @@ export const initialState = {
   paymentLoading: false,
   paymentDone: false,
   paymentError: null,
+
 }; 
 
 export const PAYMENT_REQUEST = 'PAYMENT_REQUEST';

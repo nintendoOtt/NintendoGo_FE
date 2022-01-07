@@ -1,4 +1,5 @@
 /* eslint-disable arrow-body-style */
+import { Link } from 'react-router-dom'
 
 const Header = () => {
 	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=49ef17e43b545af9269b7cb417c9db6e&redirect_uri=http://localhost:3000/login&response_type=code`
@@ -10,9 +11,9 @@ const Header = () => {
 				<div className="relative w-24 flex">
 					{/* <Image src="/logo.png" alt="logo" layout='fill'/> */}
 					<button>
-						<a href="/">
+						<Link to="/">
 							<div className="logoFont font-serif">Nintendo</div>
-						</a>
+						</Link>
 					</button>
 				</div>
 
