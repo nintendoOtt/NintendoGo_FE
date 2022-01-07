@@ -1,10 +1,17 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { LOG_IN_REQUEST } from '../reducers/user'
+
 
 const LoginPage = () => {
 
+	const dispatch = useDispatch();
+	const { logInLoading, logInDone } = useSelector((state) => state.user) 
+	const navigate = useNavigate();
 	const location = useLocation();
 	const code = location.search.substr(6);
 	
@@ -12,15 +19,30 @@ const LoginPage = () => {
 		const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id=49ef17e43b545af9269b7cb417c9db6e&redirect_uri=http://localhost:3000/login&code=${code}`
 		if (location) {
 			axios.post(KAKAO_AUTH_URL).then(res => {
-				console.log(res.data.access_token)
+				dispatch({
+					type: LOG_IN_REQUEST,
+					data: {
+						token: res.data.access_token
+					}
+				})
 			})
 		}
 	}, [location])
 
+	useEffect(() => {
+		if(logInDone) {
+			navigate('/')
+		}
+	},[logInDone])
+
 	return (
 		<div>
-			<h1>로그인 성공</h1>
-		</div>
+            { 
+				logInLoading ? 
+					<div className="my-40 text-center text-5xl">로그인중입니다...</div> : 
+					<div className="my-40 text-center text-5xl">로그인완료</div> 
+			}
+        </div>
 	)
 }
 
