@@ -1,22 +1,27 @@
-// import axios from 'axios';
-import { all, fork, put, takeLatest, call } from 'redux-saga/effects';
+/* eslint-disable no-unused-vars */
+import axios from 'axios';
+import { all, fork, put, takeLatest, call, delay } from 'redux-saga/effects';
 
 import {
     PAYMENT_SUCCESS,
     PAYMENT_FAILURE,
-    PAYMENT_REQUEST
+    PAYMENT_REQUEST,
 } from '../reducers/post';
 
-function paymentAPI() {
-    console.log("결제성공!")
+function paymentAPI(data) {
+
+    axios.post('/api/payment', data)
+    console.log(data)
+    localStorage.clear();
 }
 
-function* payment() {
+function* payment(action) {
     try {
-        yield call(paymentAPI);
+        // yield call(paymentAPI,action.data);
+        yield delay(2000);
 
         yield put({
-            type: PAYMENT_SUCCESS,
+            type: PAYMENT_SUCCESS
         });
     } catch (err) {
         yield put({
@@ -25,14 +30,15 @@ function* payment() {
         });
     }
 }
- 
-function* watchUploadPost() {
+
+
+function* watchPayment() {
     yield takeLatest(PAYMENT_REQUEST, payment);
 }
 
 export default function* postSaga() {
     yield all([
-        fork(watchUploadPost),
+        fork(watchPayment),
     ]);
 }
   

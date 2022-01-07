@@ -1,5 +1,3 @@
-/* eslint-disable arrow-body-style */
-
 import Logo from './Logo'
 
 const Header = () => {
@@ -9,13 +7,11 @@ const Header = () => {
 		<div className="border shadow-md bg-white">
 			<div className="flex items-center justify-between py-3 px-3 max-w-6xl xl:mx-auto">
 				<Logo />
-
 				{/* middle */}
 				<div className="hidden lg:flex">
 					<div className="mr-4 linkFont">My Party</div>
 					<div className="ml-4 linkFont">게임 공유 게시판</div>
 				</div>
-
 				{/* right */}
 				<button type="button" className="relative w-32 h-8">
 					<a href={KAKAO_AUTH_URL}>

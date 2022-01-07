@@ -1,14 +1,13 @@
 /* eslint-disable arrow-body-style */
 
-import Header from '../common/Header'
-import Footer from '../common/Footer'
+import Header from 'components/common/Header'
+import Footer from 'components/common/Footer'
 
 const AppLayout = ({ children }) => {
-
 	return (
 		<>
 			<Header />
-				{children}
+			{children}
 			<Footer />
 		</>
 	)
