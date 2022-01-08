@@ -2,7 +2,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import AppLayout from './layout/AppLayout'
+import AppLayout from '../components/layout/AppLayout'
 
 const SelectPage = () => {
   return (
