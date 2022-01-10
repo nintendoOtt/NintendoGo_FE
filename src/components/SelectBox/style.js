@@ -9,9 +9,8 @@ export const SelectCard = styled(Card)`
 	justify-content: center;
 	align-items: center;
 	gap: 20px;
-	cursor: pointer;
 	border: 3px solid #fff;
-	transition: 0.5s;
+	transition: 0.2s;
 	.select_box__content {
 		display: flex;
 		flex-direction: column;
@@ -33,6 +32,10 @@ export const SelectCard = styled(Card)`
 		border: 3px solid ${({ theme }) => theme.colors.primary};
 		border-radius: 10px;
 		padding: 12px;
+		transition: 0.5s;
+		&:hover {
+			filter: brightness(80%);
+		}
 	}
 	&:hover {
 		border: 5px solid ${({ theme }) => theme.colors.primary};

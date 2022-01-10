@@ -1,12 +1,12 @@
-import SelectLayout from 'components/layout/SelectLayout'
-import SelectBox from 'components/SelectBox'
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
+
+import SelectLayout from 'components/layout/SelectLayout'
+import SelectBox from 'components/SelectBox'
 import { CancelButton, SelectContainer } from './style'
 
 const SelectPage = () => {
 	const navigate = useNavigate()
-
 	const onClickToMain = useCallback(() => navigate('/'), [navigate])
 
 	return (
