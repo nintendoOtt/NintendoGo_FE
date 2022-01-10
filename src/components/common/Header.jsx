@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import Logo from './Logo'
 
 const Header = () => {
@@ -9,7 +11,7 @@ const Header = () => {
 				<Logo />
 				{/* middle */}
 				<div className="hidden lg:flex">
-					<div className="mr-4 linkFont">My Party</div>
+					<Link to="/myParty" className="mr-4 linkFont">My Party</Link>
 					<div className="ml-4 linkFont">게임 공유 게시판</div>
 				</div>
 				{/* right */}

@@ -2,21 +2,17 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
-import { PAYMENT_REQUEST } from '../../reducers/post'
-
+import { PAYMENT_REQUEST } from '../../reducers/post';
 import config from '../../payConfig'
 
 function Success() {
     const { params } = config
-
     const dispatch = useDispatch();
     const location = useLocation();
     const { paymentLoading } = useSelector((state) => state.post);
 	const token = location.search.substr(10)
 
     useEffect(() => {
-        console.log(params)
-        console.log(token)
         dispatch({
             type: PAYMENT_REQUEST,
             data: {
@@ -24,7 +20,7 @@ function Success() {
                 tid: localStorage.getItem('tid'),
                 partner_order_id: params.partner_order_id,
                 partner_user_id: params.partner_user_id,
-                pg_token:token
+                pg_token: token
             }
           });
     }, [])
