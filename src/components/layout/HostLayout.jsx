@@ -4,13 +4,11 @@ import styled from '@emotion/styled'
 
 import Logo from 'components/common/Logo'
 import ProgressBar from 'components/common/ProgressBar'
-import Footer from 'components/common/Footer'
 
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	min-height: 100vh;
 `
 
 const HostBox = styled.div`
@@ -51,8 +49,7 @@ const HostLayout = ({ children }) => {
 			case '/host/success':
 				return { title: titleList[4], percent: 100 }
 			default:
-				// num page
-				return { title: titleList[2], percent: 60 }
+				return { title: titleList[2], percent: 60 } // /num/:id page
 		}
 	}, [location.pathname])()
 
@@ -66,7 +63,6 @@ const HostLayout = ({ children }) => {
 				<ProgressBar percent={routerData?.percent} />
 				{children}
 			</HostBox>
-			<Footer />
 		</Container>
 	)
 }

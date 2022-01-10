@@ -1,5 +1,5 @@
-import styled from '@emotion/styled'
 import { useCallback } from 'react'
+import styled from '@emotion/styled'
 
 const FooterContainer = styled.footer`
 	width: 85.4%;
@@ -10,13 +10,9 @@ const FooterContainer = styled.footer`
 	border-radius: 10px 10px 0 0;
 	padding: 20px;
 	font-size: ${({ theme }) => theme.fontSizes.lg};
-	box-shadow: 5px 0 10px ${({ theme }) => theme.colors.gray_w};
+	border: 1px solid #f1f3f7;
 	color: #777;
 	margin: 0 auto;
-	/* position: absolute;
-	bottom: 0px;
-	left: 50%;
-	transform: translateX(-50%); */
 `
 
 const Footer = () => {
