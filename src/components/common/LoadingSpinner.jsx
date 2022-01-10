@@ -5,6 +5,12 @@ const Spinner = styled.div`
 	justify-content: center;
 	align-items: center;
 	height: 240px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
 	.spinner {
 		width: 50px;
 		height: 50px;

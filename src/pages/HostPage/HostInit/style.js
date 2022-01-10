@@ -40,6 +40,19 @@ export const InitCard = styled(Card)`
 	}
 `
 
+export const ButtonGroup = styled.div`
+	width: 100%;
+	display: flex;
+	gap: 20px;
+`
+
+export const CancelButton = styled(Button)`
+	font-size: ${({ theme }) => theme.fontSizes.xxxl};
+	font-weight: 500;
+	background-color: #eee;
+	color: #000;
+`
+
 export const KaKaoButton = styled(Button)`
 	display: flex;
 	justify-content: center;

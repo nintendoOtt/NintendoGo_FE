@@ -1,12 +1,13 @@
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-
 import { Divide } from 'styles/common'
-import { InitCard, KaKaoButton } from './style'
+
+import { ButtonGroup, CancelButton, InitCard, KaKaoButton } from './style'
 
 const HostInit = () => {
 	const navigate = useNavigate()
 
+	const onClickGoBack = useCallback(() => navigate(-1), [navigate])
 	const onClickToNext = useCallback(() => navigate('/host/bank'), [navigate])
 
 	return (
@@ -44,10 +45,13 @@ const HostInit = () => {
 					<span>10,500원</span>
 				</div>
 			</InitCard>
-			<KaKaoButton onClick={onClickToNext}>
-				<img src="/img/icon/kakao.png" alt="kakao" />
-				<span>카카오로 계속 진행하기</span>
-			</KaKaoButton>
+			<ButtonGroup>
+				<CancelButton onClick={onClickGoBack}>뒤로 가기</CancelButton>
+				<KaKaoButton onClick={onClickToNext}>
+					<img src="/img/icon/kakao.png" alt="kakao" />
+					<span>카카오로 계속 진행하기</span>
+				</KaKaoButton>
+			</ButtonGroup>
 		</>
 	)
 }
