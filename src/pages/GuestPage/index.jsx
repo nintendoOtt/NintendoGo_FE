@@ -1,21 +1,26 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-import Init from './Init'
-import Success from './Success'
-import AppLayout from '../../components/layout/AppLayout'
+import GuestLayout from 'components/layout/GuestLayout'
+import GuestInit from 'pages/GuestPage/GuestInit'
+import GeustEmail from 'pages/GuestPage/GuestEmail'
+import GuestSuccess from 'pages/GuestPage/GuestSuccess'
+
+
+
 
 
 function GuestPage() {
 	
 	return (
         <>			
-			<AppLayout>
+			<GuestLayout>
 				<Routes>
-					<Route path="init" element={<Init />}/>
-					<Route path="success" element={<Success />}/>
+					<Route path="init" element={<GuestInit />} />
+					<Route path="email" element={<GeustEmail />} />
+					<Route path="success" element={<GuestSuccess />}/>
 				</Routes>
-			</AppLayout>
+			</GuestLayout>
 		</>
     )
 }

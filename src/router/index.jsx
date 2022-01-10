@@ -7,6 +7,7 @@ const Select = lazy(() => import('pages/SelectPage'))
 const Guest = lazy(() => import('pages/GuestPage'))
 const Host = lazy(() => import('pages/HostPage'))
 const Party = lazy(() => import('pages/PartyPage'))
+const Invite = lazy(() => import('pages/InvitePage'))
 
 const RouterConfig = () => {
 	const routes = useRoutes([
@@ -15,7 +16,8 @@ const RouterConfig = () => {
 		{ path: '/select', element: <Select /> },
 		{ path: '/myParty', element: <Party /> },
 		{ path: '/guest/*', element: <Guest /> },
-		{ path: '/host/*', element: <Host /> }
+		{ path: '/host/*', element: <Host /> },
+		{ path: '/invite/*', element: <Invite />}
 	])
 	return routes
 }
