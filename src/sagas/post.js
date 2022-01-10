@@ -10,7 +10,7 @@ import {
 
 function paymentAPI(data) {
 
-    axios.post('/api/payment', data)
+    // axios.post('/api/payment', data)
     console.log(data)
     localStorage.clear();
 }

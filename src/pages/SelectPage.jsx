@@ -37,7 +37,7 @@ const SelectPage = () => {
                     </div>
 
                     <button>
-                        <Link to="/guest/init">
+                        <Link to="/guest/email">
                           <div className='mt-8 p-4 border-2 border-purple-500 rounded-md text-purple-500'>
                                 파티원으로 참여하기
                           </div>
