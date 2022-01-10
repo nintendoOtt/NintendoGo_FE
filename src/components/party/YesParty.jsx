@@ -1,11 +1,9 @@
 import React from 'react'
 
-function Failure() {
+export default function YesParty() {
     return (
         <div>
-            결제실패
+            파티 있다
         </div>
     )
 }
-
-export default Failure

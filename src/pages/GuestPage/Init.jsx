@@ -22,7 +22,7 @@ function Init() {
 			setRedirectUri(res.data.next_redirect_pc_url)
 		}
 		getUri()
-	}, [])
+	}, [params])
 
 	return (
 		<>

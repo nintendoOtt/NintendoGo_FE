@@ -38,7 +38,7 @@ const KaKaoLoginBtn = styled(Button)`
 		> span {
 			font-size: ${({ theme }) => theme.fontSizes.small};
 			color: #020200;
-			font-weight: 600;
+			font-weight: 500;
 		}
 	}
 `

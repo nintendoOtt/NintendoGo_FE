@@ -1,20 +1,18 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { useLocation, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux'
 import { LOG_IN_REQUEST } from '../reducers/user'
 
-
 const LoginPage = () => {
+	const dispatch = useDispatch()
+	const { logInLoading, logInDone } = useSelector(state => state.user)
+	const navigate = useNavigate()
+	const location = useLocation()
+	const code = location.search.substr(6)
 
-	const dispatch = useDispatch();
-	const { logInLoading, logInDone } = useSelector((state) => state.user) 
-	const navigate = useNavigate();
-	const location = useLocation();
-	const code = location.search.substr(6);
-	
 	useEffect(() => {
 		const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id=49ef17e43b545af9269b7cb417c9db6e&redirect_uri=http://localhost:3000/login&code=${code}`
 		if (location) {
@@ -30,20 +28,20 @@ const LoginPage = () => {
 	}, [location])
 
 	useEffect(() => {
-		if(logInDone) {
+		if (logInDone) {
 			navigate('/')
 		}
-	},[logInDone])
+	}, [logInDone])
 
 	return (
 		<div>
-            { 
-				logInLoading ? 
-					<div className="my-40 text-center text-5xl">로그인중입니다...</div> : 
-					<div className="my-40 text-center text-5xl">로그인완료</div> 
-			}
-        </div>
+			{logInLoading ? (
+				<div className="my-40 text-center text-5xl">로그인중입니다...</div>
+			) : (
+				<div className="my-40 text-center text-5xl">로그인완료</div>
+			)}
+		</div>
 	)
 }
 
-export default LoginPage;
+export default LoginPage
