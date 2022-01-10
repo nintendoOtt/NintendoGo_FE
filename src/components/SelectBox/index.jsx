@@ -13,7 +13,7 @@ const SelectBox = ({ title }) => {
 
 	const onClickToPage = useCallback(
 		() =>
-			title === '파티장' ? navigate('/host/init') : navigate('/guest/init'),
+			title === '파티장' ? navigate('/host/init') : navigate('/guest/email'),
 		[navigate, title]
 	)
 
