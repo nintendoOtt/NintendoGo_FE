@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import { PAYMENT_REQUEST } from '../../reducers/post';
-
 import config from '../../payConfig'
 
 function Success() {

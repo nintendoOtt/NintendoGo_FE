@@ -35,7 +35,7 @@ function Init() {
 				<div style={{ width:'600px'}} className='pt-8'>
 					
 					<div className='flex justify-center items-center'>
-						<img className="w-6 mr-1"src="/img/logo.png" alt="logo" layout="fill" />
+						<img className="w-6 mr-1"src="/img/icon/logo.png" alt="logo" layout="fill" />
 						<div className='logoFont'>NintendoGo</div>
 					</div>
 					

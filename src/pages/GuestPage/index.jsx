@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import Init from './Init'
 import Success from './Success'
-import AppLayout from '../layout/AppLayout'
+import AppLayout from '../../components/layout/AppLayout'
 
 
 function GuestPage() {

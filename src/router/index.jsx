@@ -6,12 +6,14 @@ const Login = lazy(() => import('pages/LoginPage'))
 const Select = lazy(() => import('pages/SelectPage'))
 const Guest = lazy(() => import('pages/GuestPage'))
 const Host = lazy(() => import('pages/HostPage'))
+const Party = lazy(() => import('pages/PartyPage'))
 
 const RouterConfig = () => {
 	const routes = useRoutes([
 		{ path: '/', element: <Home /> },
 		{ path: '/login', element: <Login /> },
 		{ path: '/select', element: <Select /> },
+		{ path: '/myParty', element: <Party /> },
 		{ path: '/guest/*', element: <Guest /> },
 		{ path: '/host/*', element: <Host /> }
 	])
