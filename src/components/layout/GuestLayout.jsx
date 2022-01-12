@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 
 import Logo from 'components/common/Logo'
 import ProgressBar from 'components/common/ProgressBar'
-import Footer from 'components/common/Footer'
 
 const Container = styled.div`
 	display: flex;
@@ -62,7 +61,7 @@ const HostLayout = ({ children }) => {
 				<ProgressBar percent={routerData?.percent} />
 				{children}
 			</HostBox>
-			<Footer />
+
 		</Container>
 	)
 }
