@@ -1,15 +1,16 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
-
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+
 import { LOG_IN_REQUEST } from '../reducers/user'
 
 const LoginPage = () => {
 	const dispatch = useDispatch()
-	const { logInLoading, logInDone } = useSelector(state => state.user)
 	const navigate = useNavigate()
+
+	const { logInLoading, logInDone } = useSelector(state => state.user)
 	const location = useLocation()
 	const code = location.search.substr(6)
 
