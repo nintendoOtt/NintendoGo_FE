@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { all, fork, put, takeLatest, call, delay } from 'redux-saga/effects';
-import axios from 'axios';
 
 import { 
     LOG_IN_SUCCESS,
@@ -19,7 +18,8 @@ function* logIn(action) {
         yield delay(3000);
 
         yield put({
-            type: LOG_IN_SUCCESS
+            type: LOG_IN_SUCCESS,
+            data: { me: "minwoo" } 
         });
     } catch (err) {
             yield put({

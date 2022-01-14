@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { Link } from 'react-router-dom'
 
 export const Button = styled.button`
 	width: 100%;
@@ -19,6 +20,37 @@ export const Button = styled.button`
 		}
 	}
 `
+
+export const LinkBtnYes = styled(Link)`
+	background-color: #6C5CE7;
+	border-radius: 6px;
+	box-shadow: 5px 5px 10px ${({ theme }) => theme.colors.gray_w};
+	color: white;
+	text-align: center;
+	padding: 10px 0;
+	
+	&:hover {
+		filter: brightness(80%);
+	}
+`
+export const LinkBtnNo = styled(Link)`
+	background-color: white;
+	border-radius: 6px;
+	box-shadow: 5px 5px 10px ${({ theme }) => theme.colors.gray_w};
+	color: black;
+	text-align: center;
+	padding: 10px 0;
+	
+	&:hover {
+		filter: brightness(80%);
+	}
+`
+
+export const Font = styled.span`
+	color: #6C5CE7;
+	font-weight:700 ;
+`
+
 
 export const Card = styled.div`
 	width: 100%;

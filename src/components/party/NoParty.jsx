@@ -20,7 +20,7 @@ function NoParty() {
                     {/* 이미지 */}
                     <div className='imgContainer'>
                         <img
-                            src="/img/partner.png"
+                            src="/img/intro/partner.png"
                             alt="partner"
                             layout="fill"
                         />

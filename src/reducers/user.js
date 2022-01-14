@@ -24,6 +24,7 @@ const reducer = (state = initialState, action) => produce(state, (draft) => {
         case LOG_IN_SUCCESS:
             draft.logInLoading = false;
             draft.logInDone = true;
+            draft.me = action.data.me
             break;
         case LOG_IN_FAILURE:
             draft.logInLoading = false;

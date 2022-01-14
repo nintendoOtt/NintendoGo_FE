@@ -1,25 +1,32 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Container, ButtonContainer, BenefitsContainer } from './style'
+
+import { LinkBtnYes, LinkBtnNo } from 'styles/common'
+import { Container } from './style'
 
 function InviteInit() {
   return (
     <Container>
-      <div className='pageLogo'>파티원 초대하기</div>
+      <div className='imgContainer'>
+        <img src='/img/intro/partner.png' alt="partner"/>
+      </div>
+     
+      <div className='pageLogo'>친구를 초대해주세요!</div>
 
-      <BenefitsContainer>
-        <ul>
-          <li>이런 혜택이 있어요</li>
-          <li>이런 혜택이 있어요</li>
-          <li>이런 혜택이 있어요</li>
-          <li>이런 혜택이 있어요</li>
-        </ul>
-      </BenefitsContainer>
+      <div>
+        <div className='benefitsContainer'>
+          <ul className='benefits'>
+            <li className='benefit'>· &nbsp;&nbsp;이런 혜택이 있어요</li>
+            <li className='benefit'>· &nbsp;&nbsp;이런 혜택이 있어요</li>
+            <li>· &nbsp;&nbsp;이런 혜택이 있어요</li>
+          </ul>
+        </div>
 
-      <ButtonContainer>
-          <Link to='/'>초대 설정 하러가기</Link>
-          <Link to='/'>초대 안하고 시작하기</Link>
-      </ButtonContainer>
+        <div className='btnContainer'>
+            <LinkBtnYes to='/invite/setting' className='btnTop'>초대 설정 하러가기</LinkBtnYes>
+            <LinkBtnNo to='/' className='btnBottom'>초대 안하고 시작하기</LinkBtnNo>
+        </div>
+      </div>
+  
       
     </Container> 
   )

@@ -1,16 +1,17 @@
 import React from 'react'
 
-import AppLayout from 'components/layout/AppLayout';
+import PartyLayout from 'components/layout/PartyLayout';
 import YesParty from 'components/party/YesParty'
 import NoParty from 'components/party/NoParty'
+
 
 function PartyPage() {
 
     const party = false;
     return (
-        <AppLayout>
+        <PartyLayout>
             {party ? <YesParty /> : <NoParty /> }
-        </AppLayout>
+        </PartyLayout>
     )
 }
 
