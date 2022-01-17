@@ -1,21 +1,26 @@
+/* eslint-disable array-callback-return */
 import React from 'react'
-import { gql, useQuery } from '@apollo/client'
+import { Link } from 'react-router-dom'
+
+import { cartItemsVar } from 'apollo'
+import { EXCHANGE_RATES } from 'apollo/user'
+import { useQuery } from '@apollo/client'
 
 function TestPage() {
-    const EXCHANGE_RATES = gql`
-    query GetExchangeRates {
-        rates(currency: "USD") {
-            currency
-            rate
-        }
-    }
-`;
+
+    const a = 3;
     function ExchangeRates() {
-        const { loading, error, data } = useQuery(EXCHANGE_RATES);
+        const { loading, error, data } = useQuery(EXCHANGE_RATES, { variables: { a } });
   
         if (loading) return <p>Loading...</p>;
         if (error) return <p>Error :(</p>;
+
+      
     
+        data.rates.map(({rate}) => {
+          cartItemsVar([...cartItemsVar(), rate])
+        })
+        
         return data.rates.map(({ currency, rate }) => (
             <div key={currency}>
                 <p>
@@ -27,7 +32,7 @@ function TestPage() {
 
   return (
     <div>
-      test
+      <Link to='/myParty'>aass</Link>
       <ExchangeRates />
     </div>
   )

@@ -15,8 +15,8 @@ function MiniProfile() {
 const Container = styled.div`
 
     img {
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
         border-radius: 9999px;
         border-width: thick;
         border-width: 2px;
