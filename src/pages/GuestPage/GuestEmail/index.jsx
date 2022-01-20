@@ -1,5 +1,8 @@
+/* eslint-disable object-shorthand */
 import { useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+
+import { guestUserData } from 'apollo'
 
 import useInput from 'hooks/useInput'
 import { Input } from 'styles/common'
@@ -11,7 +14,10 @@ const GuestEmail = () => {
 	const [email, onChangeEmail] = useInput()
 	const [valid, setValid] = useState(false)
 
-	const onClickToNext = useCallback(() => navigate('/guest/init'), [navigate])
+	const onClickToNext = useCallback(() => {
+		guestUserData({ email: email })
+		navigate('/guest/payment')
+	},[navigate])
 
 	useEffect(() => {
 		if (email) setValid(true)

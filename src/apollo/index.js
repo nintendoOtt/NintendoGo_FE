@@ -4,22 +4,22 @@ import {
 	makeVar
 } from "@apollo/client";
 
-export const cartItemsVar = makeVar([])
-export const loginToken = makeVar()
+export const guestUserData = makeVar({})
+export const loginData = makeVar({})
 
 export const cache = new InMemoryCache({
 	typePolicies: {
 	  Query: {
 		fields: {
-		  cartItems: {
+		  guestUserData: {
 			read() {
-			  return cartItemsVar();
+			  return guestUserData();
 			}
 		  },
-		  loginTk: {
-			  read() {
-				  return loginToken()
-			  }
+		  loginData: {
+			read() {
+			  return loginData()
+			}
 		  }
 		}
 	  }
@@ -27,6 +27,6 @@ export const cache = new InMemoryCache({
 });
 
 export const client = new ApolloClient({
-	uri: 'https://48p1r2roz4.sse.codesandbox.io', cache
+	uri: 'http://localhost:4000/', cache
 });
 

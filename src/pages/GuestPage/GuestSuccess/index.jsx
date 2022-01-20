@@ -1,8 +1,11 @@
 import React, { useEffect, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom'
+import { useReactiveVar } from '@apollo/client';
+
 
 import config from 'payConfig';
+import { guestUserData } from 'apollo'
 import { PAYMENT_REQUEST } from 'reducers/post';
 import { SuccessCard, SuccessButton } from './style'
 
@@ -15,10 +18,13 @@ const GuestSuccess = () => {
 	const { params } = config
 	const { paymentLoading } = useSelector((state) => state.post);
 	const token = location.search.substr(10)
-	console.log(location)
+	
+	const data = useReactiveVar(guestUserData)
 
 	useEffect(() => {
-       
+		guestUserData({ pg_token: token })
+	
+		console.log(data)
         dispatch({
             type: PAYMENT_REQUEST,
             data: {

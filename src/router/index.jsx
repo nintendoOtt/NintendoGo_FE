@@ -3,7 +3,6 @@ import { useRoutes } from 'react-router-dom'
 
 const Home = lazy(() => import('pages/HomePage'))
 const Login = lazy(() => import('pages/LoginPage'))
-const Logout = lazy(() => import('pages/LogoutPage'))
 const Select = lazy(() => import('pages/SelectPage'))
 const Guest = lazy(() => import('pages/GuestPage'))
 const Host = lazy(() => import('pages/HostPage'))
@@ -15,7 +14,6 @@ const RouterConfig = () => {
 	const routes = useRoutes([
 		{ path: '/', element: <Home /> },
 		{ path: '/login', element: <Login /> },
-		{ path: '/logout', element: <Logout /> },
 		{ path: '/select', element: <Select /> },
 		{ path: '/myParty', element: <Party /> },
 		{ path: '/guest/*', element: <Guest /> },
