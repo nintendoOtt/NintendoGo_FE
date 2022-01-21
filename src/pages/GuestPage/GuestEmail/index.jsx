@@ -1,23 +1,27 @@
+/* eslint-disable prefer-const */
+/* eslint-disable prefer-destructuring */
 /* eslint-disable object-shorthand */
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useReactiveVar } from '@apollo/client';
 
-import { guestUserData } from 'apollo'
-
+import { loginData } from 'apollo'
 import useInput from 'hooks/useInput'
 import { Input } from 'styles/common'
 import { ButtonGroup, EmailButton, EmailCard } from './style'
 
 const GuestEmail = () => {
 	const navigate = useNavigate()
+	const userData = useReactiveVar(loginData);
 
 	const [email, onChangeEmail] = useInput()
 	const [valid, setValid] = useState(false)
-
-	const onClickToNext = useCallback(() => {
-		guestUserData({ email: email })
+	
+	const onClickToNext = () => {
+		window.sessionStorage.setItem('userId', userData.loginUser.id) 
+		window.sessionStorage.setItem('nintendoEmail', email);
 		navigate('/guest/payment')
-	},[navigate])
+	}
 
 	useEffect(() => {
 		if (email) setValid(true)

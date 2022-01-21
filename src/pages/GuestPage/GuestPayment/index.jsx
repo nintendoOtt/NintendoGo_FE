@@ -16,7 +16,6 @@ function GuestPayment() {
 	const [redirectUri, setRedirectUri] = useState("")
 
 	useEffect(() => {
-
 		const getUri = async () => {
 			const res = await axios.post('/v1/payment/ready', null, {
 				params,
