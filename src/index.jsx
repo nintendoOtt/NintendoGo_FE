@@ -1,17 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from 'App'
+import { ApolloProvider } from "@apollo/client";
 
-import {
-	ApolloClient,
-	InMemoryCache,
-	ApolloProvider,
-} from "@apollo/client";
-  
-const client = new ApolloClient({
-	uri: 'https://48p1r2roz4.sse.codesandbox.io',
-	cache: new InMemoryCache()
-  });
+import { client } from 'apollo'
+
 
 ReactDOM.render(
 	<React.StrictMode>

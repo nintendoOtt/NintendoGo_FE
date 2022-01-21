@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+
+import { useReactiveVar } from '@apollo/client';
+import { loginData } from 'apollo'
 
 import { Button } from 'styles/common'
 import MiniProfile from 'components/common/MiniProfile'
@@ -8,8 +10,10 @@ import Logo from 'components/common/Logo'
 
 const Header = () => {
 
-	const { me } = useSelector((state) => state.user)
 	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=49ef17e43b545af9269b7cb417c9db6e&redirect_uri=http://localhost:3000/login&response_type=code`
+
+	const userData = useReactiveVar(loginData);
+	console.log(userData)
 
 	return (
 		<HeaderContainer>
@@ -21,10 +25,10 @@ const Header = () => {
 				</Menu>
 
 				{ 
-					me ? <MiniProfile/> : 
+					userData.loginUser ? <MiniProfile img={userData.loginUser.profile_image}/> : 
 					<KaKaoLoginBtn>
 						<a href={KAKAO_AUTH_URL}>
-							<img src="/img/icon/kakao.png" alt="kakao" />
+							<img src={"/img/icon/kakao.png"} alt="kakao" />
 							<span>kakao 로그인</span>
 						</a>
 					</KaKaoLoginBtn> 

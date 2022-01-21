@@ -1,34 +1,27 @@
-import React from 'react'
-import { gql, useQuery } from '@apollo/client'
+/* eslint-disable no-unused-vars */
+/* eslint-disable array-callback-return */
+import React, { useCallback, useState, useEffect } from 'react'
 
 function TestPage() {
-    const EXCHANGE_RATES = gql`
-    query GetExchangeRates {
-        rates(currency: "USD") {
-            currency
-            rate
-        }
-    }
-`;
-    function ExchangeRates() {
-        const { loading, error, data } = useQuery(EXCHANGE_RATES);
-  
-        if (loading) return <p>Loading...</p>;
-        if (error) return <p>Error :(</p>;
-    
-        return data.rates.map(({ currency, rate }) => (
-            <div key={currency}>
-                <p>
-                {currency}: {rate}
-                </p>
-            </div>
-        ));
-    }
+
+  const [num, setNum] = useState("")
+
+  const changeTest = (e) => {
+    setNum(e.target.value)
+  }
+
+  const clickTest = () => {
+    console.log("click:", num)
+  }
+
+  const clickTestCallback = useCallback(() => {
+    console.log("click:", num)
+  }, [num])
 
   return (
     <div>
-      test
-      <ExchangeRates />
+      <input onChange={changeTest}/>
+      <button onClick={clickTestCallback}>클릭</button>
     </div>
   )
 }

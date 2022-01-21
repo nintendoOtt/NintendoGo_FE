@@ -8,13 +8,14 @@ import { InitCard, KaKaoButton } from './style'
 
 const ADMIN_KEY = 'd268a525c0e9dc5ac5b5fea39af316b4'
 
-function EmotionTest() {
+function GuestPayment() {
 
 	const { params } = config
+	console.log(params)
+	console.log(config.params)
 	const [redirectUri, setRedirectUri] = useState("")
 
 	useEffect(() => {
-
 		const getUri = async () => {
 			const res = await axios.post('/v1/payment/ready', null, {
 				params,
@@ -73,4 +74,4 @@ function EmotionTest() {
   )
 }
 
-export default EmotionTest
+export default GuestPayment
