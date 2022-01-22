@@ -1,45 +1,11 @@
-import styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
-
-import { useReactiveVar } from '@apollo/client';
 import { loginData } from 'apollo'
+import { useReactiveVar } from '@apollo/client'
+import styled from '@emotion/styled'
 
 import { Button } from 'styles/common'
 import MiniProfile from 'components/common/MiniProfile'
 import Logo from 'components/common/Logo'
-
-const Header = () => {
-
-	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=49ef17e43b545af9269b7cb417c9db6e&redirect_uri=http://localhost:3000/login&response_type=code`
-
-	const userData = useReactiveVar(loginData);
-	console.log(userData)
-
-	return (
-		<HeaderContainer>
-			<div className="header-box">
-				<Logo />
-				<Menu>
-					<Link to='/myParty' className="menu-item">내 파티</Link>
-					<Link to='/' className="menu-item">게임 공유 게시판</Link>
-				</Menu>
-
-				{ 
-					userData.loginUser ? <MiniProfile img={userData.loginUser.profile_image}/> : 
-					<KaKaoLoginBtn>
-						<a href={KAKAO_AUTH_URL}>
-							<img src={"/img/icon/kakao.png"} alt="kakao" />
-							<span>kakao 로그인</span>
-						</a>
-					</KaKaoLoginBtn> 
-				}
-				
-			</div>
-		</HeaderContainer>
-	)
-}
-
-export default Header
 
 const HeaderContainer = styled.header`
 	width: 100%;
@@ -98,3 +64,39 @@ const Menu = styled.div`
 		}
 	}
 `
+
+const Header = () => {
+	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=49ef17e43b545af9269b7cb417c9db6e&redirect_uri=http://localhost:3000/login&response_type=code`
+
+	const userData = useReactiveVar(loginData)
+	console.log(userData)
+
+	return (
+		<HeaderContainer>
+			<div className="header-box">
+				<Logo />
+				<Menu>
+					<Link to="/myParty" className="menu-item">
+						내 파티
+					</Link>
+					<Link to="/" className="menu-item">
+						게임 공유 게시판
+					</Link>
+				</Menu>
+
+				{userData.loginUser ? (
+					<MiniProfile img={userData.loginUser.profile_image} />
+				) : (
+					<KaKaoLoginBtn>
+						<a href={KAKAO_AUTH_URL}>
+							<img src={'/img/icon/kakao.png'} alt="kakao" />
+							<span>kakao 로그인</span>
+						</a>
+					</KaKaoLoginBtn>
+				)}
+			</div>
+		</HeaderContainer>
+	)
+}
+
+export default Header
