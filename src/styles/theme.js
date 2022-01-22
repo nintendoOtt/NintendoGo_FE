@@ -25,9 +25,11 @@ const colors = {
 	black: '#000',
 	white: '#fff',
 	gray_b: '#333',
+	gray: '#707070',
 	gray_w: '#ddd',
 	primary: '#6C5CE7',
-	secondary: '#A29BFE'
+	secondary: '#A29BFE',
+	bgColor: '#F8F9FD'
 }
 
 const device = {
