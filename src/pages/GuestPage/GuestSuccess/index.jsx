@@ -27,9 +27,14 @@ const GuestSuccess = () => {
 				token: token,
 				nintendoId: window.sessionStorage.getItem("nintendoEmail") } })
 	
-		if (loading) return <LoadingSpinner/>;
-		if (error) return <p>Error :(</p>;
-
+		if (loading) {
+			console.log("로딩중")
+			return <LoadingSpinner/>;
+		}
+		if (error) {
+			console.log(JSON.stringify(error, null, 2));
+			return <p>Error :(</p>;
+		}
 		if(data) {
 			// window.sessionStorage.clear();
 			return <> 

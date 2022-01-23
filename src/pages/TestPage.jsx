@@ -4,24 +4,18 @@ import React, { useCallback, useState, useEffect } from 'react'
 
 function TestPage() {
 
-  const [num, setNum] = useState("")
+  const [test, setTest] = useState({ a :"a" })
 
-  const changeTest = (e) => {
-    setNum(e.target.value)
+
+
+  const click = () => {
+    setTest({ b:"b"})
+    console.log(test)
   }
-
-  const clickTest = () => {
-    console.log("click:", num)
-  }
-
-  const clickTestCallback = useCallback(() => {
-    console.log("click:", num)
-  }, [num])
 
   return (
     <div>
-      <input onChange={changeTest}/>
-      <button onClick={clickTestCallback}>클릭</button>
+      <button onClick={click}>클릭</button>
     </div>
   )
 }

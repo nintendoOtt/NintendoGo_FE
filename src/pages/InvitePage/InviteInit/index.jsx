@@ -1,9 +1,13 @@
 import React from 'react'
+import { useReactiveVar } from '@apollo/client'
+import { hostData } from 'apollo'
 
 import { LinkBtnYes, LinkBtnNo } from 'styles/common'
 import { Container } from './style'
 
 function InviteInit() {
+
+  console.log(useReactiveVar(hostData))
   return (
     <Container>
       <div className='imgContainer'>

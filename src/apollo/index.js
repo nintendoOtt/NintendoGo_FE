@@ -6,6 +6,7 @@ import {
 
 export const guestUserData = makeVar({})
 export const loginData = makeVar({})
+export const hostData = makeVar({})
 
 export const cache = new InMemoryCache({
 	typePolicies: {
@@ -16,10 +17,17 @@ export const cache = new InMemoryCache({
 			  return guestUserData();
 			}
 		  },
+
 		  loginData: {
 			read() {
 			  return loginData()
 			}
+		  },
+
+		  hostData: {
+			  read() {
+				  return hostData()
+			  }
 		  }
 		}
 	  }

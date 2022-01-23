@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { hostData } from 'apollo'
 
 import useInput from 'hooks/useInput'
 import { Input } from 'styles/common'
@@ -12,7 +13,14 @@ const HostEmail = () => {
 	const [valid, setValid] = useState(false)
 
 	const onClickToPrev = useCallback(() => navigate(-1), [navigate])
-	const onClickToNext = useCallback(() => navigate('/host/success'), [navigate])
+	const onClickToNext = () => {
+		hostData((prev) => ({
+			prev,
+			nintendoId: email
+		}))
+		// hostData({...hostData, nintendoId: email })
+		navigate('/invite/init')
+	}
 
 	useEffect(() => {
 		if (email) setValid(true)

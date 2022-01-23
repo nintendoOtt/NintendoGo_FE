@@ -20,7 +20,7 @@ function index() {
    
             <div className='bottomContainer'>
                 <div className='bottomText'>초대 가능인원: 2명</div>
-                <Link className='bottomLink' to='/'>변경하기</Link>
+                <Link className='bottomLink' to='/invite/setting'>변경하기</Link>
             </div>
 
             <div className='recommendText'>인터넷 커뮤니티 혹인 SNS에도 공유해보세요!</div>
