@@ -12,13 +12,18 @@ const Container = styled.div`
 `
 
 const HostBox = styled.div`
-	width: 100%;
-	max-width: 812px;
+	width: 50%;
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	gap: 30px;
+	@media ${({ theme }) => theme.device.tabletL} {
+		width: 70%;
+	}
+	@media ${({ theme }) => theme.device.mobileL} {
+		width: 90%;
+	}
 	.logo {
 		padding-top: 30px;
 	}

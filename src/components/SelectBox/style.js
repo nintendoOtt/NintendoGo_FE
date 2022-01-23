@@ -10,7 +10,7 @@ export const SelectCard = styled(Card)`
 	align-items: center;
 	gap: 20px;
 	border: 3px solid #fff;
-	transition: 0.2s;
+	transition: 0.3s;
 	.select_box__content {
 		display: flex;
 		flex-direction: column;
@@ -37,12 +37,12 @@ export const SelectCard = styled(Card)`
 			filter: brightness(80%);
 		}
 	}
+	border: 5px solid ${({ theme }) => theme.colors.white};
 	&:hover {
 		border: 5px solid ${({ theme }) => theme.colors.primary};
 		> button {
 			color: ${({ theme }) => theme.colors.white};
 			background-color: ${({ theme }) => theme.colors.primary};
-			border: none;
 		}
 	}
 `
