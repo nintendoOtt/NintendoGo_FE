@@ -3,7 +3,7 @@ import Header from 'components/common/Header'
 const MyPageLayout = ({ children }) => (
 	<>
 		<Header />
-        {children}
+		{children}
 	</>
 )
 
