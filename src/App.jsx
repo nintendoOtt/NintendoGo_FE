@@ -5,13 +5,15 @@ import { ThemeProvider } from '@emotion/react'
 import RouterConfig from 'router'
 import theme from 'styles/theme'
 import GlobalStyle from 'styles/GlobalStyle'
+import LoadingSpinner from 'components/common/LoadingSpinner'
+import './App.css'
 
 const App = () => (
 	<>
 		<BrowserRouter>
 			<ThemeProvider theme={theme}>
 				<GlobalStyle />
-				<Suspense fallback={<span>Loading...</span>}>
+				<Suspense fallback={<LoadingSpinner />}>
 					<RouterConfig />
 				</Suspense>
 			</ThemeProvider>

@@ -5,14 +5,14 @@ const config = {
 	  cid: "TC0ONETIME",
 	  partner_order_id: "partner_order_id",
 	  partner_user_id: "partner_user_id",
-	  item_name: "동대문엽기떡볶이",
+	  item_name: "닌텐도ott",
 	  quantity: 1,
 	  total_amount: 22000,
 	  vat_amount: 0,
 	  tax_free_amount: 0,
-	  approval_url: "http://localhost:3000",
-	  fail_url: "http://localhost:3000",
-	  cancel_url: "http://localhost:3000",
+	  approval_url: "http://localhost:3000/guest/success",
+	  fail_url: "http://localhost:3000/guest/init",
+	  cancel_url: "http://localhost:3000/guest/init",
 	},
 };
 
