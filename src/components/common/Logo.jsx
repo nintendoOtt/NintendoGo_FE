@@ -18,8 +18,8 @@ const LogoWrapper = styled.div`
 	> span {
 		font-size: ${({ theme }) => theme.fontSizes.xxxl};
 		color: ${({ theme }) => theme.colors.primary};
-		font-family: 'Josefin Sans', sans-serif;
-		padding-top: 5px;
+		font-family: 'Product Sans', sans-serif;
+		font-weight: 600;
 	}
 `
 

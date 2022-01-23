@@ -1,6 +1,8 @@
+import { Helmet } from 'react-helmet'
+import styled from '@emotion/styled'
+
 import AppLayout from 'components/layout/AppLayout'
 import Intro from 'components/home/Intro'
-import styled from '@emotion/styled'
 import MatchingInfo from 'components/home/MatchingInfo'
 
 const Container = styled.div`
@@ -15,13 +17,18 @@ const Container = styled.div`
 `
 
 const HomePage = () => (
-	<AppLayout>
-		<Container>
-			<Intro />
-			<img src="/img/intro/preview.png" alt="preview" />
-			<MatchingInfo />
-		</Container>
-	</AppLayout>
+	<>
+		<Helmet>
+			<title>NintendoGo | 닌텐도 OTT 공유 서비스</title>
+		</Helmet>
+		<AppLayout>
+			<Container>
+				<Intro />
+				<img src="/img/intro/preview.png" alt="preview" />
+				<MatchingInfo />
+			</Container>
+		</AppLayout>
+	</>
 )
 
 export default HomePage

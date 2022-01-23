@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 import useNavigationGuard from 'hooks/useNavigationGuard'
 import HostLayout from 'components/layout/HostLayout'
@@ -13,15 +14,20 @@ const HostPage = () => {
 	useNavigationGuard('host', 'init')
 
 	return (
-		<HostLayout>
-			<Routes>
-				<Route path="/init" element={<HostInit />} />
-				<Route path="/bank" element={<HostBank />} />
-				<Route path="/num/:id" element={<HostNum />} />
-				<Route path="/email" element={<HostEmail />} />
-				<Route path="/success" element={<HostSuccess />} />
-			</Routes>
-		</HostLayout>
+		<>
+			<Helmet>
+				<title>파티 만들기 &gt; NintendoGo</title>
+			</Helmet>
+			<HostLayout>
+				<Routes>
+					<Route path="/init" element={<HostInit />} />
+					<Route path="/bank" element={<HostBank />} />
+					<Route path="/num/:id" element={<HostNum />} />
+					<Route path="/email" element={<HostEmail />} />
+					<Route path="/success" element={<HostSuccess />} />
+				</Routes>
+			</HostLayout>
+		</>
 	)
 }
 
