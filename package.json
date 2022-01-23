@@ -18,7 +18,8 @@
 			"import/prefer-default-export": 0,
 			"import/no-unresolved": 0,
 			"import/extensions": 0,
-			"object-shorthand":"off"
+			"object-shorthand":"off",
+			"arrow-body-style":"off"
 		}
 	},
 	"lint-staged": {

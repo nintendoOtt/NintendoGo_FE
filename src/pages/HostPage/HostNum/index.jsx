@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { hostData } from 'apollo'
 
 import useInput from 'hooks/useInput'
 import { Input } from 'styles/common'
@@ -17,11 +16,7 @@ const HostNum = () => {
 	// const onClickToNext = useCallback(() => navigate('/host/email'), [navigate])
 
 	const onClickToNext = () => {
-		hostData((prev) => ({
-			prev,
-			account: account
-		}))
-		// hostData({ ...hostData, account: account })
+		window.sessionStorage.setItem("account", account)
 		navigate('/host/email')
 	}
 

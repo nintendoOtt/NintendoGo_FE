@@ -36,7 +36,6 @@ const GuestSuccess = () => {
 			return <p>Error :(</p>;
 		}
 		if(data) {
-			// window.sessionStorage.clear();
 			return <> 
 				<SuccessCard>
 					<img src="/img/icon/party.png" alt="party" />

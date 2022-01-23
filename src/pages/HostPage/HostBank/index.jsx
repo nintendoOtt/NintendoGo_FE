@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { hostData } from 'apollo'
+
 
 import { BankCard, BankItemCard, PrevButton } from './style'
 
@@ -21,11 +21,7 @@ const HostBank = () => {
 	const onClickToPrev = useCallback(() => navigate(-1), [navigate])
 	const onClickToNext = useCallback(
 		bankId => () => {
-			hostData((prev) => ({
-				prev,
-				bank: bankItems[bankId].title 
-			}))
-			// hostData({ ...hostData, bank: bankItems[bankId].title })
+			window.sessionStorage.setItem("bank",bankItems[bankId].title)
 			navigate(`/host/num/${bankId}`)
 		},
   		[navigate]

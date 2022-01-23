@@ -1,11 +1,34 @@
-import { useCallback, useMemo } from 'react'
+import { useCallback, useMemo, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useMutation, useReactiveVar  } from '@apollo/client'
+
+import { loginData } from 'apollo'
+import { MAKE_PARTY_NO_INVITE } from 'apollo/party'
 
 import { SuccessBtn, SuccessCard, SuccessContainer } from './style'
 
 const HostSuccess = () => {
+
 	const navigate = useNavigate()
-	const onClickToPartyPage = useCallback(() => navigate('/'), [navigate])
+	const userData = useReactiveVar(loginData)
+	// eslint-disable-next-line no-unused-vars
+	const [makePartyNoInvite, { loading, error, data }] = useMutation(MAKE_PARTY_NO_INVITE, {
+		variables: { userId: userData.loginUser.id, bank: window.sessionStorage.getItem("bank"),
+			account: window.sessionStorage.getItem("account"), nintendoId: window.sessionStorage.getItem("nintendoId") }
+	})
+
+	useEffect(() => {
+		if(data) {
+			navigate('/')
+			console.log(data)
+		}
+	}, [data])
+	// const onClickToPartyPage = useCallback(() => {
+	// 	navigate('/')
+	// }, [navigate])
+
+
+
 	const onClickToSettingPage = useCallback(
 		() => navigate('/invite/setting'),
 		[navigate]
@@ -33,7 +56,7 @@ const HostSuccess = () => {
 				))}
 			</SuccessCard>
 			<div className="button_wrapper">
-				<SuccessBtn onClick={onClickToPartyPage}>
+				<SuccessBtn onClick={makePartyNoInvite}>
 					초대 안하고 시작하기
 				</SuccessBtn>
 				<SuccessBtn onClick={onClickToSettingPage} primary>

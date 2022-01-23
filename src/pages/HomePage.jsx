@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 import { Helmet } from 'react-helmet'
 import styled from '@emotion/styled'
 
@@ -16,19 +17,24 @@ const Container = styled.div`
 	}
 `
 
-const HomePage = () => (
-	<>
-		<Helmet>
-			<title>NintendoGo | 닌텐도 OTT 공유 서비스</title>
-		</Helmet>
-		<AppLayout>
-			<Container>
-				<Intro />
-				<img src="/img/intro/preview.png" alt="preview" />
-				<MatchingInfo />
-			</Container>
-		</AppLayout>
-	</>
-)
+const HomePage = () => {
+
+		window.sessionStorage.clear();
+		console.log(window.sessionStorage.getItem("userId"))
+		return (
+		<>
+			<Helmet>
+				<title>NintendoGo | 닌텐도 OTT 공유 서비스</title>
+			</Helmet>
+			<AppLayout>
+				<Container>
+					<Intro />
+					<img src="/img/intro/preview.png" alt="preview" />
+					<MatchingInfo />
+				</Container>
+			</AppLayout>
+		</>
+	)
+}
 
 export default HomePage
