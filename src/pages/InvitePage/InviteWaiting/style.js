@@ -75,6 +75,7 @@ export const WaitingBtn = styled(Button)`
 	padding: 10px;
 	font-size: ${({ theme }) => theme.fontSizes.base};
 	font-weight: 600;
+	border-radius: 5px;
 	display: ${({ kakao }) => kakao && 'flex'};
 	justify-content: ${({ kakao }) => kakao && 'center'};
 	gap: ${({ kakao }) => kakao && '10px'};

@@ -1,9 +1,11 @@
 import { Route, Routes } from 'react-router-dom'
+import { lazy } from 'react'
 
 import useNavigationGuard from 'hooks/useNavigationGuard'
 import AppLayout from 'components/layout/AppLayout'
-import InviteSetting from 'pages/InvitePage/InviteSetting'
-import InviteWaiting from 'pages/InvitePage/InviteWaiting'
+
+const InviteSetting = lazy(() => import('pages/InvitePage/InviteSetting'))
+const InviteWaiting = lazy(() => import('pages/InvitePage/InviteWaiting'))
 
 const InvitePage = () => {
 	useNavigationGuard('invite', 'setting')
