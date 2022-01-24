@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Helmet } from 'react-helmet'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 import SelectLayout from 'components/layout/SelectLayout'
 import SelectBox from 'components/SelectBox'
@@ -12,9 +12,11 @@ const SelectPage = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>파티장/파티원 선택 &gt; NintendoGo</title>
-			</Helmet>
+			<HelmetProvider>
+				<Helmet>
+					<title>파티장/파티원 선택 &gt; NintendoGo</title>
+				</Helmet>
+			</HelmetProvider>
 			<SelectLayout>
 				<SelectContainer>
 					<div className="select__title">

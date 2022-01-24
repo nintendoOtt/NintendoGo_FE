@@ -49,6 +49,7 @@ export const PartyCard = styled(Card)`
 			> span {
 				font-size: ${({ theme }) => theme.fontSizes.xxl};
 				font-weight: 500;
+				cursor: default;
 			}
 			.badge {
 				position: absolute;
@@ -57,6 +58,7 @@ export const PartyCard = styled(Card)`
 				text-align: right;
 				font-size: ${({ theme }) => theme.fontSizes.base};
 				font-weight: 500;
+				cursor: default;
 				.host {
 					color: ${({ theme }) => theme.colors.secondary};
 				}
@@ -75,7 +77,6 @@ export const PartyBtn = styled(Button)`
 	padding: 10px 0;
 	font-size: ${({ theme }) => theme.fontSizes.xxl};
 	font-weight: 500;
-
 	background-color: ${({ gray }) => gray && '#EEE'};
 	color: ${({ theme, gray }) => gray && theme.colors.gray_b};
 `

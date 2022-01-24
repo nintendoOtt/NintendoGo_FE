@@ -10,11 +10,17 @@ export const HeaderContainer = styled.header`
 	z-index: 10;
 	top: 0;
 	.header-box {
+		width: 70%;
 		margin: 0 auto;
-		max-width: 1364px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+	}
+	@media ${({ theme }) => theme.device.tablet} {
+		padding: 10px 0;
+		.header-box {
+			width: 85%;
+		}
 	}
 `
 

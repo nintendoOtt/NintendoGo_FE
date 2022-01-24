@@ -1,9 +1,5 @@
-import React from 'react'
+import AppLayout from 'components/layout/AppLayout'
 
-import MyPageLayout from 'components/layout/MyPageLayout'
-
-function MyPage() {
-	return <MyPageLayout>마이페이지</MyPageLayout>
-}
+const MyPage = () => <AppLayout>마이페이지</AppLayout>
 
 export default MyPage

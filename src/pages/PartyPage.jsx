@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Helmet } from 'react-helmet'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 import AppLayout from 'components/layout/AppLayout'
 import YesParty from 'components/party/YesParty'
@@ -11,9 +11,11 @@ const PartyPage = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>진행중인 파티 &gt; NintendoGo</title>
-			</Helmet>
+			<HelmetProvider>
+				<Helmet>
+					<title>진행중인 파티 &gt; NintendoGo</title>
+				</Helmet>
+			</HelmetProvider>
 			<AppLayout>{party ? <YesParty /> : <NoParty />}</AppLayout>
 		</>
 	)

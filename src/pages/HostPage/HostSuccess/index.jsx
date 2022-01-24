@@ -25,8 +25,8 @@ const HostSuccess = () => {
 			<img src="/img/intro/partner.png" alt="partner" />
 			<h2>친구를 초대해주세요!</h2>
 			<SuccessCard>
-				{noticeList.map(v => (
-					<div key={v} className="notice_list">
+				{noticeList.map((v, i) => (
+					<div key={i} className="notice_list">
 						<img src="/img/icon/point.png" alt="point" />
 						<span>{v}</span>
 					</div>

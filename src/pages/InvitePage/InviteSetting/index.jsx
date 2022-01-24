@@ -44,8 +44,8 @@ const InviteSetting = () => {
 					</div>
 				</div>
 				<div className="card__items">
-					{noticeList.map(v => (
-						<div className="card__item" key={v}>
+					{noticeList.map((v, i) => (
+						<div key={i} className="card__item">
 							<img src="/img/icon/point.png" alt="point" />
 							<span>{v}</span>
 						</div>

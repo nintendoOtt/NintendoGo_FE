@@ -36,8 +36,8 @@ const InviteWaiting = () => {
 			<div className="waiting__notice_wrapper">
 				<WaitingCard>
 					<h2 className="notice_title">안내사항</h2>
-					{noticeList.map(v => (
-						<div key={v} className="notice_list">
+					{noticeList.map((v, i) => (
+						<div key={i} className="notice_list">
 							<img src="/img/icon/point.png" alt="point" />
 							<span>{v}</span>
 						</div>
