@@ -1,11 +1,33 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useMemo, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useMutation, useReactiveVar } from '@apollo/client'
 
+import { loginData } from 'apollo'
+import { MAKE_PARTY_WITH_INVITE } from 'apollo/party'
 import { CompletBtn, InviteCard, InviteContainer } from './style'
 
 const InviteSetting = () => {
+
 	const navigate = useNavigate()
+	const userData = useReactiveVar(loginData)
 	const [inviteNum, setInviteNum] = useState(0)
+
+	// eslint-disable-next-line no-unused-vars
+	const [onClickToWaitingPage, { loading, error, data }] = useMutation(MAKE_PARTY_WITH_INVITE, {
+		variables: { userId: userData.loginUser.id, 
+					 bank: window.sessionStorage.getItem("bank"),
+					 account: window.sessionStorage.getItem("account"), 
+					 nintendoId: window.sessionStorage.getItem("nintendoId"),
+					 inviteNum: inviteNum
+		}
+	})
+
+	useEffect(() => {
+		if(data) {
+			navigate('/invite/waiting')
+			console.log(data)
+		}
+	}, [data])
 
 	const plusInviteNum = useCallback(() => {
 		if (inviteNum === 8) setInviteNum(8)
@@ -16,11 +38,6 @@ const InviteSetting = () => {
 		if (inviteNum === 0) setInviteNum(0)
 		else setInviteNum(prev => prev - 1)
 	}, [inviteNum])
-
-	const onClickToWaitingPage = useCallback(
-		() => navigate('/invite/waiting'),
-		[navigate]
-	)
 
 	const noticeList = useMemo(
 		() => [

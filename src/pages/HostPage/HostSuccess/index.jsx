@@ -11,6 +11,7 @@ const HostSuccess = () => {
 
 	const navigate = useNavigate()
 	const userData = useReactiveVar(loginData)
+
 	// eslint-disable-next-line no-unused-vars
 	const [makePartyNoInvite, { loading, error, data }] = useMutation(MAKE_PARTY_NO_INVITE, {
 		variables: { userId: userData.loginUser.id, bank: window.sessionStorage.getItem("bank"),
@@ -23,11 +24,6 @@ const HostSuccess = () => {
 			console.log(data)
 		}
 	}, [data])
-	// const onClickToPartyPage = useCallback(() => {
-	// 	navigate('/')
-	// }, [navigate])
-
-
 
 	const onClickToSettingPage = useCallback(
 		() => navigate('/invite/setting'),
