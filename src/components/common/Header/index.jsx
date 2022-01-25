@@ -1,25 +1,35 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
-import { CgMenuGridR } from 'react-icons/cg'
 import { loginData } from 'apollo'
 import { useReactiveVar } from '@apollo/client'
 
 import MiniProfile from 'components/common/MiniProfile'
 import Logo from 'components/common/Logo'
-import { HeaderContainer, KaKaoLoginBtn, Menu } from './style'
+import {
+	HeaderContainer,
+	HeaderWrapper,
+	KaKaoLoginBtn,
+	Menu,
+	MenuBtn,
+	MobileMenu
+} from './style'
 
 const Header = () => {
-	const [isMenu, setIsMenu] = useState(true)
+	const [isMenu, setIsMenu] = useState(false)
 
 	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=49ef17e43b545af9269b7cb417c9db6e&redirect_uri=http://localhost:3000/login&response_type=code`
 	const userData = useReactiveVar(loginData)
 
 	const isMobile = useMediaQuery({ query: '(max-width:425px)' })
 
-	const onClickToggleMenu = useCallback(() => setIsMenu(prev => !prev), [])
+	const onClickMenuBtn = useCallback(() => setIsMenu(prev => !prev), [])
 
-	// 로그인 분기 처리 컴포넌트
+	useEffect(() => {
+		if (!isMobile) setIsMenu(false)
+	}, [isMobile])
+
+	// 로그인 상태에 따라 분기처리
 	const loginMenu = userData.loginUser ? (
 		<MiniProfile img={userData.loginUser.profile_image} />
 	) : (
@@ -33,26 +43,44 @@ const Header = () => {
 
 	return (
 		<HeaderContainer>
-			<div className="header-box">
-				<Logo />
-				{isMobile ? (
-					<div onClick={onClickToggleMenu}>
-						<CgMenuGridR size={25} fill={isMenu && '#6C5CE7'} />
+			<HeaderWrapper>
+				<div className="header__box">
+					<Logo />
+					{isMobile ? (
+						<div className="header__mobile_menu">
+							<MenuBtn
+								onClick={onClickMenuBtn}
+								className={isMenu ? 'active' : null}
+							/>
+						</div>
+					) : (
+						<>
+							<Menu>
+								<Link to="/myParty" className="header__menu_item">
+									내 파티
+								</Link>
+								<Link to="/" className="header__menu_item">
+									게임 공유 게시판
+								</Link>
+							</Menu>
+							{loginMenu}
+						</>
+					)}
+				</div>
+			</HeaderWrapper>
+			<MobileMenu className={isMenu ? 'active' : null}>
+				<div className="menu_wrapper">
+					<div className="menu_box">
+						<Link to="/myParty" className="header__menu_item">
+							내 파티
+						</Link>
+						<Link to="/" className="header__menu_item">
+							게임 공유 게시판
+						</Link>
 					</div>
-				) : (
-					<>
-						<Menu>
-							<Link to="/myParty" className="menu-item">
-								내 파티
-							</Link>
-							<Link to="/" className="menu-item">
-								게임 공유 게시판
-							</Link>
-						</Menu>
-						{loginMenu}
-					</>
-				)}
-			</div>
+					{loginMenu}
+				</div>
+			</MobileMenu>
 		</HeaderContainer>
 	)
 }

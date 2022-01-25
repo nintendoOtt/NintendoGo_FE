@@ -18,7 +18,7 @@ export const IntroContainer = styled.div`
 		flex-direction: column-reverse;
 	}
 	@media ${({ theme }) => theme.device.mobileL} {
-		margin-top: 30px;
+		margin-top: 0;
 	}
 	.content-left {
 		width: 40%;
