@@ -1,3 +1,4 @@
+/* eslint-disable spaced-comment */
 import { useCallback, useMemo, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useMutation, useReactiveVar } from '@apollo/client'
@@ -24,8 +25,10 @@ const InviteSetting = () => {
 
 	useEffect(() => {
 		if(data) {
+			const partyId = { partyId: data.makePartyWithInvite.partyId }
+			const newData = Object.assign(partyId, userData.loginUser)
+			loginData(newData)
 			navigate('/invite/waiting')
-			console.log(data)
 		}
 	}, [data])
 

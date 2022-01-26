@@ -15,7 +15,6 @@ const MiniProfile = ({ img }) => {
 
 	useEffect(() => {
 		if (data) {
-			console.log(data)
 			loginData({})
 		}
 	}, [data])

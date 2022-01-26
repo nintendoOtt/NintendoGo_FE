@@ -1,6 +1,7 @@
 /* eslint-disable arrow-body-style */
 import { Helmet } from 'react-helmet'
 import styled from '@emotion/styled'
+import { loginData } from 'apollo'
 
 import AppLayout from 'components/layout/AppLayout'
 import Intro from 'components/home/Intro'
@@ -20,7 +21,9 @@ const Container = styled.div`
 const HomePage = () => {
 
 		window.sessionStorage.clear();
-		console.log(window.sessionStorage.getItem("userId"))
+		console.log("sesstionStorage:", window.sessionStorage.getItem("userId"))
+		console.log("userData:", loginData)
+
 		return (
 		<>
 			<Helmet>

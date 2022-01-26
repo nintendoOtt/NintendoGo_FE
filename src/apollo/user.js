@@ -3,9 +3,10 @@ import { gql } from '@apollo/client'
 export const LOGIN_USER = gql`
 	query ($code: String!) {
 		loginUser(code: $code) {
-			id
+			user_id
 			name
 			profile_image
+			token
 		}
 	}
 `

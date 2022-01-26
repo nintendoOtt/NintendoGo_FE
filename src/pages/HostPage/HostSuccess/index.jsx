@@ -14,7 +14,7 @@ const HostSuccess = () => {
 
 	// eslint-disable-next-line no-unused-vars
 	const [makePartyNoInvite, { loading, error, data }] = useMutation(MAKE_PARTY_NO_INVITE, {
-		variables: { userId: userData.loginUser.id, bank: window.sessionStorage.getItem("bank"),
+		variables: { userId: userData.loginUser.user_id, bank: window.sessionStorage.getItem("bank"),
 			account: window.sessionStorage.getItem("account"), nintendoId: window.sessionStorage.getItem("nintendoId") }
 	})
 

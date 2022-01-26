@@ -1,7 +1,32 @@
-import { useMemo } from 'react'
+/* eslint-disable no-unused-vars */
+import { useMemo, useEffect, useCallback } from 'react'
+import { useReactiveVar } from '@apollo/client'
+import { loginData } from 'apollo'
+
 import { WaitingBtn, WaitingCard, WaitingContainer } from './style'
 
 const InviteWaiting = () => {
+
+	const userData = useReactiveVar(loginData)
+	console.log(userData)
+	
+	const params = {
+		container: '#kakao-link-btn',
+		templateId: 69577,
+		templateArgs: {
+			'title': '제목 영역입니다.',
+			'description': '설명 영역입니다.'
+		}
+	}
+	useEffect(() => {
+		window.Kakao.init('a278d9d814b69465568fd897864b3df9')
+		window.Kakao.Link.createCustomButton(params);
+	},[window.Kakao])
+
+	const send = useCallback(() => {
+		window.Kakao.Link.createCustomButton(params);
+	},[])
+	  
 	const noticeList = useMemo(
 		() => [
 			'파티생성 후 24시간 안에 초대를 완료해주세요',
@@ -46,7 +71,7 @@ const InviteWaiting = () => {
 			</div>
 			<div className="waiting__button_wrapper">
 				<WaitingBtn>초대 링크 복사하기</WaitingBtn>
-				<WaitingBtn kakao>
+				<WaitingBtn kakao onClick={send} id="kakao-link-btn" >
 					<img src="/img/icon/kakao.png" alt="kakao" />
 					카카오톡으로 공유하기
 				</WaitingBtn>
