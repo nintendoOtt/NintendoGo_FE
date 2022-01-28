@@ -62,7 +62,9 @@ const YesParty = () => {
 					<span className="ishost">초대할 수 있는 인원이 2명 남았어요!</span>
 					<div className="party__btn_wrapper">
 						<PartyBtn gray>파티원 해제하기</PartyBtn>
-						<PartyBtn>파티원 초대하기</PartyBtn>
+						<PartyBtn>
+							파티원 초대하기
+						</PartyBtn>
 					</div>
 				</>
 			) : (

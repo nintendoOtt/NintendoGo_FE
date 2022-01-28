@@ -13,7 +13,12 @@ const HostNum = () => {
 	const [valid, setValid] = useState(false)
 
 	const onClickToPrev = useCallback(() => navigate(-1), [navigate])
-	const onClickToNext = useCallback(() => navigate('/host/email'), [navigate])
+	// const onClickToNext = useCallback(() => navigate('/host/email'), [navigate])
+
+	const onClickToNext = () => {
+		window.sessionStorage.setItem("account", account)
+		navigate('/host/email')
+	}
 
 	useEffect(() => {
 		if (account) setValid(true)

@@ -4,7 +4,7 @@ import { Button, Card } from 'styles/common'
 export const WaitingContainer = styled.div`
 	width: 35%;
 	margin: 0 auto;
-	padding-top: 80px;
+	padding-top: 50px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

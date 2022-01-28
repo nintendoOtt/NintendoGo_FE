@@ -1,6 +1,8 @@
 import { Global, css } from '@emotion/react'
+import emotionReset from 'emotion-reset'
 
 const style = css`
+	${emotionReset}
 	html {
 		font-size: 100%;
 	}

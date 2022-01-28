@@ -1,29 +1,31 @@
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
+
+
 import { BankCard, BankItemCard, PrevButton } from './style'
+
+const bankItems = [
+	{ id: 1, title: 'KEB하나' },
+	{ id: 2, title: 'KB국민' },
+	{ id: 3, title: '신한' },
+	{ id: 4, title: 'NH농협' },
+	{ id: 5, title: '우리' },
+	{ id: 6, title: 'IBK기업' },
+	{ id: 7, title: '카카오뱅크' },
+	{ id: 8, title: '토스' }
+]
 
 const HostBank = () => {
 	const navigate = useNavigate()
 
 	const onClickToPrev = useCallback(() => navigate(-1), [navigate])
 	const onClickToNext = useCallback(
-		bankId => () => navigate(`/host/num/${bankId}`),
-		[navigate]
+		bankId => () => {
+			window.sessionStorage.setItem("bank",bankItems[bankId].title)
+			navigate(`/host/num/${bankId}`)
+		},
+  		[navigate]
 	)
-
-	const bankItems = useCallback(
-		() => [
-			{ id: 1, title: 'KEB하나' },
-			{ id: 2, title: 'KB국민' },
-			{ id: 3, title: '신한' },
-			{ id: 4, title: 'NH농협' },
-			{ id: 5, title: '우리' },
-			{ id: 6, title: 'IBK기업' },
-			{ id: 7, title: '카카오뱅크' },
-			{ id: 8, title: '토스' }
-		],
-		[]
-	)()
 
 	return (
 		<>

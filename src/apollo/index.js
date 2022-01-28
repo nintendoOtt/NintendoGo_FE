@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, makeVar } from '@apollo/client'
 
 export const guestUserData = makeVar({})
-export const loginData = makeVar({})
+export const loginData = makeVar({ })
 
 export const cache = new InMemoryCache({
 	typePolicies: {
@@ -23,6 +23,6 @@ export const cache = new InMemoryCache({
 })
 
 export const client = new ApolloClient({
-	uri: 'http://localhost:4000/',
+	uri: 'http://localhost:8080/graphql',
 	cache
 })
