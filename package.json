@@ -3,9 +3,10 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"start": "craco start",
-		"build": "craco build",
-		"test": "craco test",
+		"prepare": "husky install",
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
 	"eslintConfig": {
@@ -18,8 +19,8 @@
 			"import/prefer-default-export": 0,
 			"import/no-unresolved": 0,
 			"import/extensions": 0,
-			"object-shorthand":"off",
-			"arrow-body-style":"off"
+			"object-shorthand": "off",
+			"arrow-body-style": "off"
 		}
 	},
 	"lint-staged": {
@@ -43,27 +44,22 @@
 	},
 	"dependencies": {
 		"@apollo/client": "^3.5.7",
-		"@craco/craco": "^6.4.3",
 		"@emotion/css": "^11.7.1",
 		"@emotion/react": "^11.7.1",
 		"@emotion/styled": "^11.6.0",
-		"@reduxjs/toolkit": "^1.7.1",
 		"@testing-library/jest-dom": "^5.11.4",
 		"@testing-library/react": "^11.1.0",
 		"@testing-library/user-event": "^12.1.10",
-		"autoprefixer": "^9.8.8",
 		"axios": "^0.24.0",
+		"emotion-reset": "^3.0.1",
 		"graphql": "^16.2.0",
 		"http-proxy-middleware": "^2.0.1",
 		"immer": "^9.0.7",
-		"postcss": "^7.0.39",
-		"qs": "^6.10.2",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-helmet": "^6.1.0",
 		"react-router-dom": "^6.2.1",
 		"react-scripts": "4.0.3",
-		"tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
 		"universal-cookie": "^4.0.4",
 		"web-vitals": "^1.0.1"
 	},
