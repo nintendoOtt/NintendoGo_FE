@@ -15,6 +15,7 @@ const LoginPage = () => {
 
 	useEffect(() => {
 		if (userData) {
+			console.log("?")
 			navigate('/')
 		}
 	}, [userData])
@@ -25,12 +26,17 @@ const LoginPage = () => {
 		})
 
 		if (loading) return <LoadingSpinner />
-		if (error) return <p>Error :(</p>
+		if (error)  {
+			console.log(error)
+			return (
+				<div>에러</div>
+			)
+		}
 
 		if (data) {
 			console.log(data)
 			loginData(data)
-			setUserData(data.loginUser.id)
+			setUserData(data.loginUser.user_id)
 			return <LoadingSpinner />
 		}
 	}

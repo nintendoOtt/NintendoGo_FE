@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react'
 import styled from '@emotion/styled'
 import { useMutation, useReactiveVar } from '@apollo/client'
@@ -9,13 +8,13 @@ import { LOGOUT_USER } from 'apollo/user'
 const MiniProfile = ({ img }) => {
 	const userData = useReactiveVar(loginData)
 
+	// eslint-disable-next-line no-unused-vars
 	const [logoutHandler, { loading, error, data }] = useMutation(LOGOUT_USER, {
 		variables: { id: userData.loginUser.id }
 	})
 
 	useEffect(() => {
 		if (data) {
-			console.log(data)
 			loginData({})
 		}
 	}, [data])

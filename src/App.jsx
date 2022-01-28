@@ -6,7 +6,6 @@ import RouterConfig from 'router'
 import theme from 'styles/theme'
 import GlobalStyle from 'styles/GlobalStyle'
 import LoadingSpinner from 'components/common/LoadingSpinner'
-import './App.css'
 
 const App = () => (
 	<BrowserRouter>

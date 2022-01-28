@@ -1,5 +1,10 @@
-import AppLayout from 'components/layout/AppLayout'
+import Header from 'components/common/Header'
 
-const MyPage = () => <AppLayout>마이페이지</AppLayout>
+const MyPageLayout = ({ children }) => (
+	<>
+		<Header />
+		{children}
+	</>
+)
 
-export default MyPage
+export default MyPageLayout

@@ -1,5 +1,6 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import styled from '@emotion/styled'
+import { loginData } from 'apollo'
 
 import AppLayout from 'components/layout/AppLayout'
 import Intro from 'components/home/Intro'
@@ -32,21 +33,27 @@ const Container = styled.div`
 	}
 `
 
-const HomePage = () => (
-	<>
-		<HelmetProvider>
-			<Helmet>
-				<title>NintendoGo | 닌텐도 OTT 공유 서비스</title>
-			</Helmet>
-		</HelmetProvider>
-		<AppLayout>
-			<Container>
-				<Intro />
-				<img src="/img/intro/preview.png" alt="preview" />
-				<MatchingInfo />
-			</Container>
-		</AppLayout>
-	</>
-)
+const HomePage = () => {
+	window.sessionStorage.clear()
+	console.log('sesstionStorage:', window.sessionStorage.getItem('userId'))
+	console.log('userData:', loginData)
+
+	return (
+		<>
+			<HelmetProvider>
+				<Helmet>
+					<title>NintendoGo | 닌텐도 OTT 공유 서비스</title>
+				</Helmet>
+			</HelmetProvider>
+			<AppLayout>
+				<Container>
+					<Intro />
+					<img src="/img/intro/preview.png" alt="preview" />
+					<MatchingInfo />
+				</Container>
+			</AppLayout>
+		</>
+	)
+}
 
 export default HomePage

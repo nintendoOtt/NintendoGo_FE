@@ -12,7 +12,11 @@ const HostEmail = () => {
 	const [valid, setValid] = useState(false)
 
 	const onClickToPrev = useCallback(() => navigate(-1), [navigate])
-	const onClickToNext = useCallback(() => navigate('/host/success'), [navigate])
+	const onClickToNext = () => {
+		window.sessionStorage.setItem('nintendoId', email)
+		// hostData({...hostData, nintendoId: email })
+		navigate('/host/success')
+	}
 
 	useEffect(() => {
 		if (email) setValid(true)
