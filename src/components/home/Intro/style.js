@@ -2,12 +2,12 @@ import styled from '@emotion/styled'
 import { Button } from 'styles/common'
 
 export const IntroContainer = styled.div`
-	width: 63%;
+	width: 65%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: 50px;
-	margin: 150px auto 0;
+	margin: 100px auto 0;
 	@media ${({ theme }) => theme.device.NoteBook} {
 		width: 100%;
 		gap: 30px;

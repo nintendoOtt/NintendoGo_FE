@@ -21,6 +21,9 @@ const Container = styled.div`
 		border-radius: inherit;
 		transition: 0.3s;
 	}
+	@media ${({ theme }) => theme.device.tabletL} {
+		border-radius: 5px;
+	}
 	@keyframes gradientAnimation {
 		0% {
 			background-position: 0% 50%;

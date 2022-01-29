@@ -9,6 +9,9 @@ export const Button = styled.button`
 	background-color: ${({ theme }) => theme.colors.primary};
 	box-shadow: 5px 5px 10px ${({ theme }) => theme.colors.gray_w};
 	transition: 0.5s;
+	border: none;
+	font-family: 'Noto Sans KR';
+	cursor: pointer;
 	&:hover {
 		filter: brightness(80%);
 	}
@@ -74,5 +77,9 @@ export const Input = styled.input`
 	&:focus {
 		outline: 1px solid ${({ theme }) => theme.colors.primary};
 		border-radius: 10px;
+	}
+	@media ${({ theme }) => theme.device.mobileL} {
+		height: 30px;
+		font-size: 12px;
 	}
 `

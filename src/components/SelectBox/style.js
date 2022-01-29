@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { Card } from 'styles/common'
 
 export const SelectCard = styled(Card)`
+	width: 100%;
 	height: 550px;
 	padding: 20px;
 	display: flex;
@@ -10,7 +11,8 @@ export const SelectCard = styled(Card)`
 	align-items: center;
 	gap: 20px;
 	border: 3px solid #fff;
-	transition: 0.3s;
+	transition: 0.2s ease-in-out;
+	border: 5px solid ${({ theme }) => theme.colors.white};
 	.select_box__content {
 		display: flex;
 		flex-direction: column;
@@ -28,21 +30,36 @@ export const SelectCard = styled(Card)`
 	> button {
 		width: 100%;
 		color: ${({ theme }) => theme.colors.primary};
-		font-size: ${({ theme }) => theme.fontSizes.xxxl};
+		font-size: ${({ theme }) => theme.fontSizes.xxl};
 		border: 3px solid ${({ theme }) => theme.colors.primary};
 		border-radius: 10px;
-		padding: 12px;
+		font-weight: 600;
+		padding: 12px 0;
 		transition: 0.5s;
+		cursor: pointer;
 		&:hover {
 			filter: brightness(80%);
 		}
 	}
-	border: 5px solid ${({ theme }) => theme.colors.white};
 	&:hover {
 		border: 5px solid ${({ theme }) => theme.colors.primary};
 		> button {
 			color: ${({ theme }) => theme.colors.white};
 			background-color: ${({ theme }) => theme.colors.primary};
 		}
+	}
+	@media ${({ theme }) => theme.device.tablet} {
+		width: auto;
+		height: 250px;
+		gap: 12px;
+		.select_box__content {
+			gap: 8px;
+		}
+		> button {
+			padding: 8px 0;
+		}
+	}
+	@media ${({ theme }) => theme.device.mobileL} {
+		height: 200px;
 	}
 `

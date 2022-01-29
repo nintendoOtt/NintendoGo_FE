@@ -1,10 +1,9 @@
-import { useCallback, useMemo, useEffect } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useMutation, useReactiveVar } from '@apollo/client'
 
 import { loginData } from 'apollo'
 import { MAKE_PARTY_NO_INVITE } from 'apollo/party'
-
 import { SuccessBtn, SuccessCard, SuccessContainer } from './style'
 
 const HostSuccess = () => {
@@ -23,13 +22,6 @@ const HostSuccess = () => {
 			}
 		}
 	)
-
-	useEffect(() => {
-		if (data) {
-			navigate('/')
-			console.log(data)
-		}
-	}, [data])
 
 	const onClickToSettingPage = useCallback(
 		() => navigate('/invite/setting'),

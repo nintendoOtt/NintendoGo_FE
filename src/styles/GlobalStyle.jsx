@@ -18,6 +18,12 @@ const style = css`
 		&::-webkit-scrollbar {
 			display: none !important;
 		}
+		a {
+			text-decoration: none;
+		}
+		* {
+			box-sizing: border-box;
+		}
 	}
 	@font-face {
 		font-family: 'Noto Sans KR';

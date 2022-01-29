@@ -1,6 +1,5 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import styled from '@emotion/styled'
-import { loginData } from 'apollo'
 
 import AppLayout from 'components/layout/AppLayout'
 import Intro from 'components/home/Intro'
@@ -16,6 +15,7 @@ const Container = styled.div`
 	> img {
 		border-radius: 10px;
 		box-shadow: 5px 5px 10px #bbb;
+		width: 100%;
 		@media ${({ theme }) => theme.device.tablet} {
 			border-radius: 5px;
 			box-shadow: 3px 3px 8px #bbb;
@@ -35,8 +35,6 @@ const Container = styled.div`
 
 const HomePage = () => {
 	window.sessionStorage.clear()
-	console.log('sesstionStorage:', window.sessionStorage.getItem('userId'))
-	console.log('userData:', loginData)
 
 	return (
 		<>

@@ -21,13 +21,13 @@ const Header = () => {
 	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=49ef17e43b545af9269b7cb417c9db6e&redirect_uri=http://localhost:3000/login&response_type=code`
 	const userData = useReactiveVar(loginData)
 
-	const isMobile = useMediaQuery({ query: '(max-width:425px)' })
+	const isTablet = useMediaQuery({ query: '(max-width:768px)' })
 
 	const onClickMenuBtn = useCallback(() => setIsMenu(prev => !prev), [])
 
 	useEffect(() => {
-		if (!isMobile) setIsMenu(false)
-	}, [isMobile])
+		if (!isTablet) setIsMenu(false)
+	}, [isTablet])
 
 	// 로그인 상태에 따라 분기처리
 	const loginMenu = userData.loginUser ? (
@@ -46,7 +46,7 @@ const Header = () => {
 			<HeaderWrapper>
 				<div className="header__box">
 					<Logo />
-					{isMobile ? (
+					{isTablet ? (
 						<div className="header__mobile_menu">
 							<MenuBtn
 								onClick={onClickMenuBtn}
