@@ -1,10 +1,12 @@
 import Header from 'components/common/Header'
 
-const MyPageLayout = ({ children }) => (
-	<>
-		<Header />
-		{children}
-	</>
-)
+import MyPageLayout from 'components/layout/MyPageLayout'
+import NoParty from 'components/myPage/NoParty'
 
-export default MyPageLayout
+function MyPage() {
+	console.log( window.sessionStorage.getItem("nintendoEmail"))
+	return <MyPageLayout>마이페이지</MyPageLayout>
+
+}
+
+export default MyPage
