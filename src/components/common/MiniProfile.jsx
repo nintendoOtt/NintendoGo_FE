@@ -1,32 +1,17 @@
-import React, { useEffect } from 'react'
+/* eslint-disable no-unused-vars */
+import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from '@emotion/styled'
-import { useMutation, useReactiveVar } from '@apollo/client'
-
-import { loginData } from 'apollo'
-import { LOGOUT_USER } from 'apollo/user'
 
 const MiniProfile = ({ img }) => {
-	const userData = useReactiveVar(loginData)
-
-	// eslint-disable-next-line no-unused-vars
-	const [logoutHandler, { loading, error, data }] = useMutation(LOGOUT_USER, {
-		variables: { id: userData.loginUser.id }
-	})
-
-	useEffect(() => {
-		if (data) {
-			loginData({})
-		}
-	}, [data])
-
 	return (
-		<Container>
-			<img src={img} alt="" onClick={logoutHandler} />
+		<Container to="/myPage">
+			<img src={img} alt="profile"/>
 		</Container>
 	)
 }
 
-const Container = styled.div`
+const Container = styled(Link)`
 	img {
 		width: 40px;
 		height: 40px;

@@ -1,29 +1,40 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { IoIosArrowForward } from 'react-icons/io'
 
 import { Container } from './style'
 
 function Btns() {
   const Btn = [
-    { title:"결제관리", link: "/"},
-    { title:"정산계좌 관리", link: "/"},
-    { title:"결제관리", link: "/"},
-    { title:"결제관리", link: "/"}
+    { title:"💳 결제 관리", link: "/"},
+    { title:"💵 정산계좌 관리", link: "/"},
+    { title:"💬 문의·상담", link: "/"},
   ]
 
   return ( 
     Btn.map((v) => (
-      <div className='btn'>
+      <Link to={v.link} className='btn'>
         <div>{v.title}</div>
-        <IoIosArrowForward />
-      </div>
+        <IoIosArrowForward className='arrow'/>
+      </Link>
     ))
   )
- 
 }
 
 
 function NoParty() {
+
+  // const userData = useReactiveVar(loginData)
+  // const [logoutHandler, { loading, error, data }] = useMutation(LOGOUT_USER, {
+	// 	variables: { id: userData.loginUser.id }
+	// })
+
+	// useEffect(() => {
+	// 	if (data) {
+	// 		loginData({})
+	// 	}
+	// }, [data])
+
   return <Container>
       <div className='topText'>
         <span>
@@ -44,13 +55,9 @@ function NoParty() {
 
       <div className='btnContainer'>
           <Btns />
-          {/* <div className='btn'>
-            <div>결제관리</div>
-            <IoIosArrowForward />
-          </div>
-          <div>정산계좌 관리</div>
-          <div>문의 및 상담</div>
-          <div>로그아웃</div> */}
+          <button className='logout'>
+            로그아웃
+          </button>
       </div>
   </Container>;
 }
