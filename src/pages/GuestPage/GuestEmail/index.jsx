@@ -3,7 +3,7 @@
 /* eslint-disable object-shorthand */
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useReactiveVar } from '@apollo/client';
+import { useReactiveVar } from '@apollo/client'
 
 import { loginData } from 'apollo'
 import useInput from 'hooks/useInput'
@@ -12,14 +12,14 @@ import { ButtonGroup, EmailButton, EmailCard } from './style'
 
 const GuestEmail = () => {
 	const navigate = useNavigate()
-	const userData = useReactiveVar(loginData);
+	const userData = useReactiveVar(loginData)
 
 	const [email, onChangeEmail] = useInput()
 	const [valid, setValid] = useState(false)
-	
+
 	const onClickToNext = () => {
-		window.sessionStorage.setItem('userId', userData.loginUser.id) 
-		window.sessionStorage.setItem('nintendoEmail', email);
+		window.sessionStorage.setItem('userId', userData.loginUser.id)
+		window.sessionStorage.setItem('nintendoEmail', email)
 		navigate('/guest/payment')
 	}
 
@@ -47,7 +47,6 @@ const GuestEmail = () => {
 				/>
 			</EmailCard>
 			<ButtonGroup>
-	
 				<EmailButton onClick={onClickToNext} disabled={!valid}>
 					다음 단계로 넘어가기
 				</EmailButton>

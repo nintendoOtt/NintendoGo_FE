@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
-import React from 'react'
 
-const Container = styled.div`
+export const MatchingContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -32,31 +31,24 @@ const Container = styled.div`
 				font-size: ${({ theme }) => theme.fontSizes.xxxl};
 				color: #777;
 			}
+			@media ${({ theme }) => theme.device.tablet} {
+				flex-direction: row-reverse;
+			}
+		}
+		@media ${({ theme }) => theme.device.tabletL} {
+			gap: 50px;
+			padding: 50px 0 80px;
+		}
+		@media ${({ theme }) => theme.device.tablet} {
+			flex-direction: column;
+			align-items: center;
+			gap: 15px;
+			padding: 30px 0 50px;
+		}
+	}
+	@media ${({ theme }) => theme.device.mobileL} {
+		> img {
+			width: 180px;
 		}
 	}
 `
-
-const MatchingInfo = () => (
-	<Container>
-		<span className="matching-header">
-			<span>NintendoGo</span> 매칭 현황 입니다!
-		</span>
-		<img src="/img/intro/partner.png" alt="partner" />
-		<div className="matching-data">
-			<div className="data-box">
-				<h2>30명</h2>
-				<span>최근 일일 매칭 현황</span>
-			</div>
-			<div className="data-box">
-				<h2>500명</h2>
-				<span>최근 일주일 매칭 현황</span>
-			</div>
-			<div className="data-box">
-				<h2>3,500명</h2>
-				<span>최근 한달 매칭 현황</span>
-			</div>
-		</div>
-	</Container>
-)
-
-export default MatchingInfo

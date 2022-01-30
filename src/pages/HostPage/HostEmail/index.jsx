@@ -13,7 +13,7 @@ const HostEmail = () => {
 
 	const onClickToPrev = useCallback(() => navigate(-1), [navigate])
 	const onClickToNext = () => {
-		window.sessionStorage.setItem("nintendoId", email)
+		window.sessionStorage.setItem('nintendoId', email)
 		// hostData({...hostData, nintendoId: email })
 		navigate('/host/success')
 	}

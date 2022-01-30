@@ -8,16 +8,14 @@ import GlobalStyle from 'styles/GlobalStyle'
 import LoadingSpinner from 'components/common/LoadingSpinner'
 
 const App = () => (
-	<>
-		<BrowserRouter>
-			<ThemeProvider theme={theme}>
-				<GlobalStyle />
-				<Suspense fallback={<LoadingSpinner />}>
-					<RouterConfig />
-				</Suspense>
-			</ThemeProvider>
-		</BrowserRouter>
-	</>
+	<BrowserRouter>
+		<ThemeProvider theme={theme}>
+			<GlobalStyle />
+			<Suspense fallback={<LoadingSpinner />}>
+				<RouterConfig />
+			</Suspense>
+		</ThemeProvider>
+	</BrowserRouter>
 )
 
 export default App

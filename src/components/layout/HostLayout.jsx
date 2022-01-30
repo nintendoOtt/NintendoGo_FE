@@ -18,18 +18,19 @@ const HostBox = styled.div`
 	align-items: center;
 	flex-direction: column;
 	gap: 30px;
-	@media ${({ theme }) => theme.device.tabletL} {
-		width: 70%;
-	}
-	@media ${({ theme }) => theme.device.mobileL} {
-		width: 90%;
-	}
 	.logo {
 		padding-top: 30px;
 	}
 	.title {
 		font-size: ${({ theme }) => theme.fontSizes.titleSize};
 		font-weight: 500;
+	}
+	@media ${({ theme }) => theme.device.tabletL} {
+		width: 70%;
+		gap: 20px;
+	}
+	@media ${({ theme }) => theme.device.mobileL} {
+		width: 90%;
 	}
 `
 

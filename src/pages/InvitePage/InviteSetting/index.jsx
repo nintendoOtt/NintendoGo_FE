@@ -8,23 +8,26 @@ import { MAKE_PARTY_WITH_INVITE } from 'apollo/party'
 import { CompletBtn, InviteCard, InviteContainer } from './style'
 
 const InviteSetting = () => {
-
 	const navigate = useNavigate()
 	const userData = useReactiveVar(loginData)
 	const [inviteNum, setInviteNum] = useState(0)
 
 	// eslint-disable-next-line no-unused-vars
-	const [onClickToWaitingPage, { loading, error, data }] = useMutation(MAKE_PARTY_WITH_INVITE, {
-		variables: { userId: userData.loginUser.id, 
-					 bank: window.sessionStorage.getItem("bank"),
-					 account: window.sessionStorage.getItem("account"), 
-					 nintendoId: window.sessionStorage.getItem("nintendoId"),
-					 inviteNum: inviteNum
+	const [onClickToWaitingPage, { loading, error, data }] = useMutation(
+		MAKE_PARTY_WITH_INVITE,
+		{
+			variables: {
+				userId: userData.loginUser.id,
+				bank: window.sessionStorage.getItem('bank'),
+				account: window.sessionStorage.getItem('account'),
+				nintendoId: window.sessionStorage.getItem('nintendoId'),
+				inviteNum: inviteNum
+			}
 		}
-	})
+	)
 
 	useEffect(() => {
-		if(data) {
+		if (data) {
 			const partyId = { partyId: data.makePartyWithInvite.partyId }
 			const newData = Object.assign(partyId, userData.loginUser)
 			loginData(newData)
@@ -64,8 +67,8 @@ const InviteSetting = () => {
 					</div>
 				</div>
 				<div className="card__items">
-					{noticeList.map(v => (
-						<div className="card__item" key={v}>
+					{noticeList.map((v, i) => (
+						<div key={i} className="card__item">
 							<img src="/img/icon/point.png" alt="point" />
 							<span>{v}</span>
 						</div>

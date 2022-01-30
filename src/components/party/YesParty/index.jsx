@@ -43,7 +43,7 @@ const YesParty = () => {
 					{dummyUsers.map(
 						v =>
 							v.username !== null && (
-								<div key={v} className="party__info_item">
+								<div key={v.id} className="party__info_item">
 									<img src={v.image} alt={v.username} />
 									<span>{v.username} 님</span>
 									{(v.id === 1 || v.username === me) && (

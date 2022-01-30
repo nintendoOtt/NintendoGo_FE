@@ -1,5 +1,5 @@
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { Route, Routes } from 'react-router-dom'
-import { Helmet } from 'react-helmet'
 
 import useNavigationGuard from 'hooks/useNavigationGuard'
 import HostLayout from 'components/layout/HostLayout'
@@ -15,9 +15,11 @@ const HostPage = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>파티 만들기 &gt; NintendoGo</title>
-			</Helmet>
+			<HelmetProvider>
+				<Helmet>
+					<title>파티 만들기 &gt; NintendoGo</title>
+				</Helmet>
+			</HelmetProvider>
 			<HostLayout>
 				<Routes>
 					<Route path="/init" element={<HostInit />} />

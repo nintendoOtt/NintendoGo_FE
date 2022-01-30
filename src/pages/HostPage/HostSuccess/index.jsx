@@ -1,29 +1,27 @@
-import { useCallback, useMemo, useEffect } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useMutation, useReactiveVar  } from '@apollo/client'
+import { useMutation, useReactiveVar } from '@apollo/client'
 
 import { loginData } from 'apollo'
 import { MAKE_PARTY_NO_INVITE } from 'apollo/party'
-
 import { SuccessBtn, SuccessCard, SuccessContainer } from './style'
 
 const HostSuccess = () => {
-
 	const navigate = useNavigate()
 	const userData = useReactiveVar(loginData)
 
 	// eslint-disable-next-line no-unused-vars
-	const [makePartyNoInvite, { loading, error, data }] = useMutation(MAKE_PARTY_NO_INVITE, {
-		variables: { userId: userData.loginUser.user_id, bank: window.sessionStorage.getItem("bank"),
-			account: window.sessionStorage.getItem("account"), nintendoId: window.sessionStorage.getItem("nintendoId") }
-	})
-
-	useEffect(() => {
-		if(data) {
-			navigate('/')
-			console.log(data)
+	const [makePartyNoInvite, { loading, error, data }] = useMutation(
+		MAKE_PARTY_NO_INVITE,
+		{
+			variables: {
+				userId: userData.loginUser.user_id,
+				bank: window.sessionStorage.getItem('bank'),
+				account: window.sessionStorage.getItem('account'),
+				nintendoId: window.sessionStorage.getItem('nintendoId')
+			}
 		}
-	}, [data])
+	)
 
 	const onClickToSettingPage = useCallback(
 		() => navigate('/invite/setting'),
@@ -44,8 +42,8 @@ const HostSuccess = () => {
 			<img src="/img/intro/partner.png" alt="partner" />
 			<h2>친구를 초대해주세요!</h2>
 			<SuccessCard>
-				{noticeList.map(v => (
-					<div key={v} className="notice_list">
+				{noticeList.map((v, i) => (
+					<div key={i} className="notice_list">
 						<img src="/img/icon/point.png" alt="point" />
 						<span>{v}</span>
 					</div>

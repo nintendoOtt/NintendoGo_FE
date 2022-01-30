@@ -4,13 +4,13 @@ import styled from '@emotion/styled'
 
 const FooterContainer = styled.footer`
 	width: 85.4%;
-	height: 65px;
 	display: flex;
 	justify-content: center;
 	background-color: ${({ theme }) => theme.colors.white};
 	border-radius: 10px 10px 0 0;
 	padding: 20px;
-	font-size: ${({ theme }) => theme.fontSizes.lg};
+	font-size: 16px;
+	font-weight: 200;
 	border: 1px solid #f1f3f7;
 	color: #777;
 	margin: 0 auto;
@@ -18,6 +18,9 @@ const FooterContainer = styled.footer`
 	bottom: ${({ baseHeight }) => baseHeight && 0};
 	left: ${({ baseHeight }) => baseHeight && 0};
 	right: ${({ baseHeight }) => baseHeight && 0};
+	@media ${({ theme }) => theme.device.mobileL} {
+		font-size: 13px;
+	}
 `
 
 const Footer = () => {
