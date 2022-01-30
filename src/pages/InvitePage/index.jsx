@@ -1,6 +1,6 @@
 import { lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Helmet } from 'react-helmet'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 import useNavigationGuard from 'hooks/useNavigationGuard'
 import AppLayout from 'components/layout/AppLayout'
@@ -13,9 +13,11 @@ const InvitePage = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>파티 초대하기 &gt; NintendoGo</title>
-			</Helmet>
+			<HelmetProvider>
+				<Helmet>
+					<title>파티 초대하기 &gt; NintendoGo</title>
+				</Helmet>
+			</HelmetProvider>
 			<AppLayout>
 				<Routes>
 					<Route path="/setting" element={<InviteSetting />} />

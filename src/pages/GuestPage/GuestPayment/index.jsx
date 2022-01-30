@@ -9,11 +9,10 @@ import { InitCard, KaKaoButton } from './style'
 const ADMIN_KEY = 'd268a525c0e9dc5ac5b5fea39af316b4'
 
 function GuestPayment() {
-
 	const { params } = config
 	console.log(params)
 	console.log(config.params)
-	const [redirectUri, setRedirectUri] = useState("")
+	const [redirectUri, setRedirectUri] = useState('')
 
 	useEffect(() => {
 		const getUri = async () => {
@@ -24,14 +23,14 @@ function GuestPayment() {
 					'Content-type': 'application/x-www-form-urlencoded;charset=utf-8'
 				}
 			})
-      	localStorage.setItem('tid', res.data.tid)
+			localStorage.setItem('tid', res.data.tid)
 			setRedirectUri(res.data.next_redirect_pc_url)
 		}
 		getUri()
 	}, [])
 
-  return (
-    <>
+	return (
+		<>
 			<InitCard>
 				<div className="init-title">
 					<img src="/img/icon/speaker.png" alt="speaker" />
@@ -65,13 +64,13 @@ function GuestPayment() {
 					<span>10,500원</span>
 				</div>
 			</InitCard>
-			<KaKaoButton >
+			<KaKaoButton>
 				<a href={redirectUri}>
-					<div className='payFont'>카카오페이로 결제하기</div>
+					<div className="payFont">카카오페이로 결제하기</div>
 				</a>
 			</KaKaoButton>
 		</>
-  )
+	)
 }
 
 export default GuestPayment

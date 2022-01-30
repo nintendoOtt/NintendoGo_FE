@@ -1,5 +1,5 @@
-import { Helmet } from 'react-helmet'
 import { Routes, Route } from 'react-router-dom'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 import GuestLayout from 'components/layout/GuestLayout'
 import useNavigationGuard from 'hooks/useNavigationGuard'
@@ -13,9 +13,11 @@ const GuestPage = () => {
 
 	return (
 		<>
-			<Helmet>
-				<title>파티 참여하기 &gt; NintendoGo</title>
-			</Helmet>
+			<HelmetProvider>
+				<Helmet>
+					<title>파티 참여하기 &gt; NintendoGo</title>
+				</Helmet>
+			</HelmetProvider>
 			<GuestLayout>
 				<Routes>
 					<Route path="/init/:partyId" element={<GuestInit /> } />

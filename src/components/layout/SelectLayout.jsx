@@ -3,11 +3,13 @@ import styled from '@emotion/styled'
 
 const Container = styled.div`
 	width: 100%;
-	max-width: 812px;
 	margin: 50px auto 0;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	@media ${({ theme }) => theme.device.tablet} {
+		margin-top: 30px;
+	}
 `
 
 const SelectLayout = ({ children }) => (

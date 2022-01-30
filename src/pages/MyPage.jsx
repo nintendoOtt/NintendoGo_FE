@@ -1,10 +1,10 @@
-import React from 'react'
+import Header from 'components/common/Header'
 
-import MyPageLayout from 'components/layout/MyPageLayout'
+const MyPageLayout = ({ children }) => (
+	<>
+		<Header />
+		{children}
+	</>
+)
 
-function MyPage() {
-	console.log( window.sessionStorage.getItem("nintendoEmail"))
-	return <MyPageLayout>마이페이지</MyPageLayout>
-}
-
-export default MyPage
+export default MyPageLayout
