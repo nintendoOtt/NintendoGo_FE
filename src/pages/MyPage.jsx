@@ -1,12 +1,7 @@
-import Header from 'components/common/Header'
-
-import MyPageLayout from 'components/layout/MyPageLayout'
-import NoParty from 'components/myPage/NoParty'
+import AppLayout from 'components/layout/AppLayout'
 
 function MyPage() {
-	console.log( window.sessionStorage.getItem("nintendoEmail"))
-	return <MyPageLayout>마이페이지</MyPageLayout>
-
+	return <AppLayout>마이페이지</AppLayout>
 }
 
 export default MyPage

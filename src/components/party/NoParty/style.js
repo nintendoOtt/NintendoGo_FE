@@ -28,7 +28,18 @@ export const NoPartyContainer = styled.div`
 		gap: 50px;
 		> img {
 			width: 40%;
+			@media ${({ theme }) => theme.device.mobileL} {
+				width: 60%;
+			}
 		}
+	}
+	@media ${({ theme }) => theme.device.table} {
+		width: 50%;
+		padding-top: 40px;
+	}
+	@media ${({ theme }) => theme.device.mobileL} {
+		width: 80%;
+		padding-top: 20px;
 	}
 `
 

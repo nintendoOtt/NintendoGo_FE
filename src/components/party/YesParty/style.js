@@ -3,7 +3,6 @@ import { Button, Card } from 'styles/common'
 
 export const YesPartyContainer = styled.div`
 	width: 60%;
-	padding-top: 80px;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
@@ -16,6 +15,20 @@ export const YesPartyContainer = styled.div`
 		display: flex;
 		gap: 20px;
 	}
+	@media ${({ theme }) => theme.device.tabletL} {
+		width: 80%;
+	}
+	@media ${({ theme }) => theme.device.tablet} {
+		padding-top: 25px;
+		width: 90%;
+		.party__btn_wrapper {
+			flex-direction: column;
+			gap: 10px;
+		}
+	}
+	@media ${({ theme }) => theme.device.tablet} {
+		padding-top: 10px;
+	}
 `
 
 export const PartyCard = styled(Card)`
@@ -23,6 +36,9 @@ export const PartyCard = styled(Card)`
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
+	@media ${({ theme }) => theme.device.mobileL} {
+		gap: 20px;
+	}
 	.party__title {
 		display: flex;
 		align-items: center;
@@ -36,6 +52,13 @@ export const PartyCard = styled(Card)`
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 20px;
+		@media ${({ theme }) => theme.device.tablet} {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@media ${({ theme }) => theme.device.mobileL} {
+			gap: 15px;
+			grid-template-columns: repeat(2, 1fr);
+		}
 		.party__info_item {
 			display: flex;
 			flex-direction: column;
@@ -46,6 +69,12 @@ export const PartyCard = styled(Card)`
 			border-radius: 5px;
 			transition: 0.5s;
 			position: relative;
+			@media ${({ theme }) => theme.device.mobileL} {
+				justify-content: space-between;
+				align-items: center;
+				gap: 5px;
+				padding: 10px;
+			}
 			> span {
 				font-size: ${({ theme }) => theme.fontSizes.xxl};
 				font-weight: 500;

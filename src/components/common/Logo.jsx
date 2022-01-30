@@ -26,6 +26,9 @@ const LogoWrapper = styled.div`
 			width: 18px;
 			height: 18px;
 		}
+		> span {
+			font-size: 16px;
+		}
 	}
 `
 

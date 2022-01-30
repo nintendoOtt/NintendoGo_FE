@@ -13,6 +13,10 @@ export const SelectCard = styled(Card)`
 	border: 3px solid #fff;
 	transition: 0.2s ease-in-out;
 	border: 5px solid ${({ theme }) => theme.colors.white};
+	> img {
+		width: 80px;
+		height: 80px;
+	}
 	.select_box__content {
 		display: flex;
 		flex-direction: column;
@@ -52,14 +56,32 @@ export const SelectCard = styled(Card)`
 		width: auto;
 		height: 250px;
 		gap: 12px;
+		> img {
+			width: 70px;
+			height: 70px;
+		}
 		.select_box__content {
 			gap: 8px;
 		}
 		> button {
 			padding: 8px 0;
+			border: 2px solid ${({ theme }) => theme.colors.primary};
+		}
+		&:hover {
+			border: 3px solid ${({ theme }) => theme.colors.primary};
 		}
 	}
 	@media ${({ theme }) => theme.device.mobileL} {
 		height: 200px;
+		> img {
+			width: 60px;
+			height: 60px;
+		}
+		> button {
+			border: 1px solid ${({ theme }) => theme.colors.primary};
+		}
+		&:hover {
+			border: 2px solid ${({ theme }) => theme.colors.primary};
+		}
 	}
 `
