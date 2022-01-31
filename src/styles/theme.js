@@ -12,6 +12,26 @@ const fontSizes = {
 	titleSize: calcRem(40)
 }
 
+const lightColors = {
+	bgColor: '#F8F9FD',
+	textColor: '#333',
+	baseColor: '#fff',
+	gray: '#707070',
+	gray_w: '#ddd',
+	primary: '#6C5CE7',
+	secondary: '#A29BFE'
+}
+
+const darkColors = {
+	bgColor: '#1e272e',
+	textColor: '#eee',
+	baseColor: '#000',
+	gray: '#707070',
+	gray_w: '#333',
+	primary: '#6C5CE7',
+	secondary: '#A29BFE'
+}
+
 const deviceSizes = {
 	mobileS: '320px',
 	mobileM: '375px',
@@ -19,17 +39,6 @@ const deviceSizes = {
 	tablet: '768px',
 	tabletL: '1024px',
 	NoteBook: '1440px'
-}
-
-const colors = {
-	black: '#000',
-	white: '#fff',
-	gray_b: '#333',
-	gray: '#707070',
-	gray_w: '#ddd',
-	primary: '#6C5CE7',
-	secondary: '#A29BFE',
-	bgColor: '#F8F9FD'
 }
 
 const device = {
@@ -41,11 +50,16 @@ const device = {
 	NoteBook: `only screen and (max-width: ${deviceSizes.NoteBook})`
 }
 
-const theme = {
+export const lightTheme = {
 	fontSizes,
-	colors,
+	colors: lightColors,
 	deviceSizes,
 	device
 }
 
-export default theme
+export const darkTheme = {
+	fontSizes,
+	colors: darkColors,
+	deviceSizes,
+	device
+}
