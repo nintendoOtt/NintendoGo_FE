@@ -9,11 +9,12 @@ export const HeaderContainer = styled.header`
 `
 
 export const HeaderWrapper = styled.div`
-	background-color: ${({ theme }) => theme.colors.white};
-	border-bottom: 1px solid #f1f3f7;
+	background-color: ${({ theme }) => theme.colors.baseColor};
+	border-bottom: 1px solid ${({ theme }) => theme.colors.subColor};
 	padding: 15px 0;
 	position: relative;
 	z-index: 2;
+	transition: 0.3s;
 	.header__box {
 		width: 70%;
 		margin: 0 auto;
@@ -63,12 +64,12 @@ export const KaKaoLoginBtn = styled(Button)`
 
 export const Menu = styled.div`
 	display: flex;
-	gap: 10px;
+	gap: 5px;
 	.header__menu_item {
 		border-radius: 5px;
 		font-size: ${({ theme }) => theme.fontSizes.base};
 		padding: 5px 10px;
-		color: #333;
+		color: ${({ theme }) => theme.colors.textColor};
 		cursor: pointer;
 		transition: 0.5s;
 		font-weight: 500;
@@ -82,12 +83,12 @@ export const Menu = styled.div`
 export const MobileMenu = styled.div`
 	position: relative;
 	z-index: 1;
-	background-color: ${({ theme }) => theme.colors.white};
-	border-bottom: 1px solid #eee;
+	background-color: ${({ theme }) => theme.colors.baseColor};
+	border-bottom: 1px solid ${({ theme }) => theme.colors.subColor};
 	padding: 10px 0;
 	transform: translateY(-50px);
 	opacity: 0;
-	transition: 0.3s ease-in-out;
+	transition: 0.3s;
 	&.active {
 		opacity: 1;
 		transform: translateY(0px);
@@ -119,17 +120,17 @@ export const MenuBtn = styled.div`
 		position: absolute;
 		width: 25px;
 		height: 2px;
-		background-color: ${({ theme }) => theme.colors.gray_b};
+		background-color: ${({ theme }) => theme.colors.textColor};
 		transition: 0.2s;
 		transform: translateY(-8px);
-		box-shadow: 0 8px 0 ${({ theme }) => theme.colors.gray_b};
+		box-shadow: 0 8px 0 ${({ theme }) => theme.colors.textColor};
 	}
 	&::after {
 		content: '';
 		position: absolute;
 		width: 25px;
 		height: 2px;
-		background-color: ${({ theme }) => theme.colors.gray_b};
+		background-color: ${({ theme }) => theme.colors.textColor};
 		transition: 0.2s;
 		transform: translateY(8px);
 	}

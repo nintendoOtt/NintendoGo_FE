@@ -16,18 +16,18 @@ const lightColors = {
 	bgColor: '#F8F9FD',
 	textColor: '#333',
 	baseColor: '#fff',
+	subColor: '#f1f3f7',
 	gray: '#707070',
-	gray_w: '#ddd',
 	primary: '#6C5CE7',
 	secondary: '#A29BFE'
 }
 
 const darkColors = {
-	bgColor: '#1e272e',
+	bgColor: '#353b48',
 	textColor: '#eee',
-	baseColor: '#000',
+	baseColor: '#2f3640',
+	subColor: '#222f3e',
 	gray: '#707070',
-	gray_w: '#333',
 	primary: '#6C5CE7',
 	secondary: '#A29BFE'
 }
