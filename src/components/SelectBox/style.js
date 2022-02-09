@@ -10,9 +10,10 @@ export const SelectCard = styled(Card)`
 	justify-content: center;
 	align-items: center;
 	gap: 20px;
-	border: 3px solid #fff;
-	transition: 0.2s ease-in-out;
-	border: 5px solid ${({ theme }) => theme.colors.white};
+	transition: 0.2s;
+	border: 2px solid ${({ theme }) => theme.colors.subColor};
+	box-sizing: border-box;
+	box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.1);
 	> img {
 		width: 80px;
 		height: 80px;
@@ -35,20 +36,23 @@ export const SelectCard = styled(Card)`
 		width: 100%;
 		color: ${({ theme }) => theme.colors.primary};
 		font-size: ${({ theme }) => theme.fontSizes.xxl};
-		border: 3px solid ${({ theme }) => theme.colors.primary};
+		border: 1px solid ${({ theme }) => theme.colors.primary};
+		box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 		border-radius: 10px;
 		font-weight: 600;
 		padding: 12px 0;
 		transition: 0.5s;
+		background-color: transparent;
 		cursor: pointer;
 		&:hover {
 			filter: brightness(80%);
+			color: white;
 		}
 	}
 	&:hover {
-		border: 5px solid ${({ theme }) => theme.colors.primary};
+		border: 2px solid ${({ theme }) => theme.colors.primary};
 		> button {
-			color: ${({ theme }) => theme.colors.white};
+			color: white;
 			background-color: ${({ theme }) => theme.colors.primary};
 		}
 	}

@@ -3,9 +3,9 @@ import styled from '@emotion/styled'
 const Container = styled.div`
 	width: 100%;
 	height: 15px;
-	background-color: #eee;
+	background-color: ${({ theme }) => theme.colors.baseColor};
+	border: 1px solid ${({ theme }) => theme.colors.subColor};
 	border-radius: 10px;
-	box-shadow: 5px 5px 10px ${({ theme }) => theme.colors.gray_w};
 	> div {
 		width: ${({ percent }) => percent}%;
 		height: 100%;

@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { SelectCard } from './style'
@@ -6,10 +6,10 @@ import { SelectCard } from './style'
 const SelectBox = ({ title }) => {
 	const navigate = useNavigate()
 
-	const imgPath = useCallback(
+	const imgPath = useMemo(
 		() => (title === '파티장' ? '/img/manager.png' : '/img/member.png'),
 		[title]
-	)()
+	)
 
 	const onClickToPage = useCallback(
 		() =>

@@ -7,7 +7,6 @@ export const Button = styled.button`
 	border-radius: 10px;
 	color: ${({ theme }) => theme.colors.white};
 	background-color: ${({ theme }) => theme.colors.primary};
-	box-shadow: 5px 5px 10px ${({ theme }) => theme.colors.gray_w};
 	transition: 0.5s;
 	border: none;
 	font-family: 'Noto Sans KR';
@@ -27,7 +26,6 @@ export const Button = styled.button`
 export const LinkBtnYes = styled(Link)`
 	background-color: #6c5ce7;
 	border-radius: 6px;
-	box-shadow: 5px 5px 10px ${({ theme }) => theme.colors.gray_w};
 	color: white;
 	text-align: center;
 	padding: 10px 0;
@@ -38,7 +36,6 @@ export const LinkBtnYes = styled(Link)`
 export const LinkBtnNo = styled(Link)`
 	background-color: white;
 	border-radius: 6px;
-	box-shadow: 5px 5px 10px ${({ theme }) => theme.colors.gray_w};
 	color: black;
 	text-align: center;
 	padding: 10px 0;
@@ -55,25 +52,28 @@ export const Font = styled.span`
 export const Card = styled.div`
 	width: 100%;
 	height: auto;
+	border: 2px solid ${({ theme }) => theme.colors.subColor};
 	border-radius: 10px;
-	box-shadow: 5px 5px 10px ${({ theme }) => theme.colors.gray_w};
-	background-color: ${({ theme }) => theme.colors.white};
+	background-color: ${({ theme }) => theme.colors.baseColor};
 `
 
 export const Divide = styled.hr`
 	width: 100%;
-	border: 1px solid #f8f9fd;
+	border: 1px solid ${({ theme }) => theme.colors.subColor};
 `
 
 export const Input = styled.input`
 	width: 100%;
 	height: 40px;
-	border: 1px solid ${({ theme }) => theme.colors.gray_w};
+	border: none;
 	border-radius: 5px;
 	padding: 10px;
 	font-size: ${({ theme }) => theme.fontSizes.base};
-	outline: 1px solid ${({ theme }) => theme.colors.gray_w};
-	transition: 0.5s;
+	outline: 1px solid ${({ theme }) => theme.colors.subColor};
+	box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+	transition: 0.3s;
+	background-color: transparent;
+	color: ${({ theme }) => theme.colors.textColor};
 	&:focus {
 		outline: 1px solid ${({ theme }) => theme.colors.primary};
 		border-radius: 10px;

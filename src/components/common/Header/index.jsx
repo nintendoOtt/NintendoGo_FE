@@ -18,7 +18,7 @@ import {
 const Header = () => {
 	const [isMenu, setIsMenu] = useState(false)
 
-	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=49ef17e43b545af9269b7cb417c9db6e&redirect_uri=http://localhost:3000/login&response_type=code`
+	const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=8aac3bd7d302e49db68923a6ebc79048&redirect_uri=http://localhost:3000/login&response_type=code`
 	const userData = useReactiveVar(loginData)
 
 	const isTablet = useMediaQuery({ query: '(max-width:768px)' })

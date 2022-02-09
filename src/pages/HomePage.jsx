@@ -14,11 +14,9 @@ const Container = styled.div`
 	gap: 150px;
 	> img {
 		border-radius: 10px;
-		box-shadow: 5px 5px 10px #bbb;
 		width: 100%;
 		@media ${({ theme }) => theme.device.tablet} {
 			border-radius: 5px;
-			box-shadow: 3px 3px 8px #bbb;
 		}
 	}
 	@media ${({ theme }) => theme.device.tabletL} {

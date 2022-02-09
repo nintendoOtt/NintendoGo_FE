@@ -69,8 +69,9 @@ export const BankItemCard = styled(Card)`
 	cursor: pointer;
 	background-color: transparent;
 	box-shadow: none;
-	border: solid 1px #ddd;
-	transition: 0.3s;
+	border: solid 1px ${({ theme }) => theme.colors.subColor};
+	box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.2s;
 	img {
 		padding: 10px 0;
 	}

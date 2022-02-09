@@ -62,6 +62,7 @@ export const IntroButton = styled(Button)`
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
+	color: white;
 	> span {
 		font-size: ${({ theme }) => theme.fontSizes.xl};
 	}

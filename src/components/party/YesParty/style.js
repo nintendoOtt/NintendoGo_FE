@@ -9,7 +9,7 @@ export const YesPartyContainer = styled.div`
 	gap: 20px;
 	.ishost {
 		font-size: ${({ theme }) => theme.fontSizes.xl};
-		color: ${({ theme }) => theme.colors.gray};
+		color: ${({ theme }) => theme.colors.textColor};
 	}
 	.party__btn_wrapper {
 		display: flex;
@@ -65,9 +65,10 @@ export const PartyCard = styled(Card)`
 			align-items: flex-start;
 			gap: 10px;
 			padding: 20px;
-			border: 1px solid #aaa;
+			border: 1px solid ${({ theme }) => theme.colors.subColor};
 			border-radius: 5px;
-			transition: 0.5s;
+			box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+			transition: 0.3s;
 			position: relative;
 			@media ${({ theme }) => theme.device.mobileL} {
 				justify-content: space-between;
@@ -79,6 +80,8 @@ export const PartyCard = styled(Card)`
 				font-size: ${({ theme }) => theme.fontSizes.xxl};
 				font-weight: 500;
 				cursor: default;
+				color: ${({ theme }) => theme.colors.textColor};
+				transition: 0.3s color;
 			}
 			.badge {
 				position: absolute;

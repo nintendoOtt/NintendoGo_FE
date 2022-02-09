@@ -17,7 +17,8 @@ export const SelectContainer = styled.div`
 		}
 		> span {
 			font-size: ${({ theme }) => theme.fontSizes.xl};
-			color: #777;
+			color: ${({ theme }) => theme.colors.textColor};
+			transition: 0.3s;
 		}
 	}
 	.select__content {
