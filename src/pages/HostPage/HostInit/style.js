@@ -88,8 +88,8 @@ export const ButtonGroup = styled.div`
 export const CancelButton = styled(Button)`
 	font-size: ${({ theme }) => theme.fontSizes.xxxl};
 	font-weight: 500;
-	background-color: #eee;
-	color: #000;
+	background-color: ${({ theme }) => theme.colors.btnColor};
+	color: ${({ theme }) => theme.colors.textColor};
 	padding: 10px 0;
 `
 

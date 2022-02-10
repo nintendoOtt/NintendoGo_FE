@@ -37,7 +37,7 @@ export const WaitingContainer = styled.div`
 			> button {
 				color: ${({ theme }) => theme.colors.primary};
 				text-decoration: underline;
-				transition: 0.5s;
+				transition: 0.3s;
 				&:hover {
 					filter: brightness(50%);
 				}

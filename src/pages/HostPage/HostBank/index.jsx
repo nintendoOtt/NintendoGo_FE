@@ -21,9 +21,10 @@ const HostBank = () => {
 	)
 
 	const onClickToPrev = useCallback(() => navigate(-1), [navigate])
+
 	const onClickToNext = useCallback(
 		bankId => () => {
-			window.sessionStorage.setItem('bank', bankItems[bankId].title)
+			window.sessionStorage.setItem('bank', bankItems[bankId - 1].title)
 			navigate(`/host/num/${bankId}`)
 		},
 		[bankItems, navigate]

@@ -109,6 +109,7 @@ export const PartyBtn = styled(Button)`
 	padding: 10px 0;
 	font-size: ${({ theme }) => theme.fontSizes.xxl};
 	font-weight: 500;
-	background-color: ${({ gray }) => gray && '#EEE'};
-	color: ${({ theme, gray }) => gray && theme.colors.gray_b};
+	background-color: ${({ theme, gray }) =>
+		gray ? theme.colors.btnColor : theme.colors.primary};
+	color: ${({ theme, gray }) => (gray ? theme.colors.textColor : '#fff')};
 `

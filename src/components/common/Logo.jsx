@@ -7,7 +7,7 @@ const LogoWrapper = styled.div`
 	align-items: center;
 	gap: 5px;
 	cursor: pointer;
-	transition: 0.5s;
+	transition: 0.3s;
 	&:hover {
 		filter: brightness(60%);
 	}

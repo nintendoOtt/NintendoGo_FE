@@ -52,8 +52,8 @@ export const CancelButton = styled(Button)`
 	font-size: ${({ theme }) => theme.fontSizes.xxxl};
 	font-weight: 500;
 	padding: 12px 0;
-	background-color: #eee;
-	color: #000;
+	background-color: ${({ theme }) => theme.colors.btnColor};
+	color: ${({ theme }) => theme.colors.textColor};
 	@media ${({ theme }) => theme.device.tablet} {
 		padding: 8px 0;
 	}

@@ -17,6 +17,7 @@ const lightColors = {
 	textColor: '#333',
 	baseColor: '#fff',
 	subColor: '#f1f3f7',
+	btnColor: '#eee',
 	gray: '#707070',
 	primary: '#6C5CE7',
 	secondary: '#A29BFE'
@@ -27,6 +28,7 @@ const darkColors = {
 	textColor: '#eee',
 	baseColor: '#2f3640',
 	subColor: '#222f3e',
+	btnColor: '#2f3542',
 	gray: '#707070',
 	primary: '#6C5CE7',
 	secondary: '#A29BFE'

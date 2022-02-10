@@ -43,7 +43,7 @@ const HostNum = () => {
 				/>
 			</NumCard>
 			<ButtonGroup>
-				<NumButton bgColor="#eee" onClick={onClickToPrev}>
+				<NumButton prev onClick={onClickToPrev}>
 					전 단계로 돌아가기
 				</NumButton>
 				<NumButton onClick={onClickToNext} disabled={!valid}>

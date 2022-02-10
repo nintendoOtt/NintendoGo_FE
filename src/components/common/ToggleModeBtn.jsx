@@ -1,27 +1,30 @@
 import { useCallback } from 'react'
 import { useRecoilState } from 'recoil'
-import styled from '@emotion/styled'
-
+import { BsMoonFill, BsSunFill } from 'react-icons/bs'
 import { isDarkState } from 'atoms'
 import { removeDarkMode, setDarkMode } from 'utils/localStroage'
+import { Button } from 'styles/common'
+import styled from '@emotion/styled'
 
-const Button = styled.button`
-	width: 110px;
-	background-color: #333;
-	border: none;
-	font-size: 16px;
-	font-weight: 500;
-	color: #eee;
-	cursor: pointer;
-	background-color: ${({ theme }) => theme.formColor};
-	padding: 12px 16px;
+const ToggleButton = styled(Button)`
+	min-width: 150px;
 	position: fixed;
-	right: 20px;
-	bottom: 20px;
-	border-radius: 10px;
-	transition: 0.5s;
-	&:hover {
-		filter: brightness(80%);
+	right: 25px;
+	bottom: 25px;
+	width: auto;
+	padding: 12px 24px;
+	color: ${({ theme }) => theme.colors.textColor};
+	background-color: ${({ theme }) => theme.colors.btnColor};
+	font-size: ${({ theme }) => theme.fontSizes.lg};
+	border-radius: 50px;
+	* {
+		transition: initial;
+	}
+	.inner {
+		display: flex;
+		gap: 5px;
+		justify-content: center;
+		align-items: center;
 	}
 `
 
@@ -34,7 +37,21 @@ const ToggleModeBtn = () => {
 		else setDarkMode()
 	}, [isDark, setIsDark])
 
-	return <Button onClick={onToggleMode}>button</Button>
+	return (
+		<ToggleButton onClick={onToggleMode}>
+			{isDark ? (
+				<div className="inner">
+					<BsMoonFill />
+					<span>라이트 모드</span>
+				</div>
+			) : (
+				<div className="inner">
+					<BsSunFill />
+					<span>다크 모드</span>
+				</div>
+			)}
+		</ToggleButton>
+	)
 }
 
 export default ToggleModeBtn

@@ -71,7 +71,7 @@ export const Menu = styled.div`
 		padding: 5px 10px;
 		color: ${({ theme }) => theme.colors.textColor};
 		cursor: pointer;
-		transition: 0.5s;
+		transition: 0.3s;
 		font-weight: 500;
 		&:hover {
 			background-color: ${({ theme }) => theme.colors.primary};

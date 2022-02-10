@@ -6,6 +6,7 @@ const Container = styled.div`
 	background-color: ${({ theme }) => theme.colors.baseColor};
 	border: 1px solid ${({ theme }) => theme.colors.subColor};
 	border-radius: 10px;
+	transition: 0.3s;
 	> div {
 		width: ${({ percent }) => percent}%;
 		height: 100%;

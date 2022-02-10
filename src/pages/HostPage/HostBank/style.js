@@ -71,7 +71,6 @@ export const BankItemCard = styled(Card)`
 	box-shadow: none;
 	border: solid 1px ${({ theme }) => theme.colors.subColor};
 	box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.2);
-	transition: 0.2s;
 	img {
 		padding: 10px 0;
 	}
@@ -92,7 +91,7 @@ export const BankItemCard = styled(Card)`
 export const PrevButton = styled(Button)`
 	padding: 10px 0;
 	margin-bottom: 50px;
-	background-color: #eee;
-	color: #333;
+	background-color: ${({ theme }) => theme.colors.btnColor};
+	color: ${({ theme }) => theme.colors.textColor};
 	font-size: ${({ theme }) => theme.fontSizes.xxxl};
 `

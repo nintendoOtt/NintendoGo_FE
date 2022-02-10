@@ -64,8 +64,9 @@ export const EmailButton = styled(Button)`
 	width: 48%;
 	font-size: ${({ theme }) => theme.fontSizes.xxxl};
 	padding: 10px 0;
-	background-color: ${({ bgColor, theme }) => bgColor || theme.colors.primary};
-	color: ${({ bgColor }) => (bgColor ? '#000' : '#fff')};
+	background-color: ${({ prev, theme }) =>
+		prev ? theme.colors.btnColor : theme.colors.primary};
+	color: ${({ prev, theme }) => (prev ? theme.colors.textColor : '#fff')};
 	font-weight: 500;
 	@media ${({ theme }) => theme.device.mobileL} {
 		width: 100%;

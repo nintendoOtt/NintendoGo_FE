@@ -41,7 +41,7 @@ export const SelectCard = styled(Card)`
 		border-radius: 10px;
 		font-weight: 600;
 		padding: 12px 0;
-		transition: 0.5s;
+		transition: 0.3s;
 		background-color: transparent;
 		cursor: pointer;
 		&:hover {

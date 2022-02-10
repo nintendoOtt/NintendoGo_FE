@@ -41,7 +41,7 @@ const HostEmail = () => {
 				/>
 			</EmailCard>
 			<ButtonGroup>
-				<EmailButton bgColor="#eee" onClick={onClickToPrev}>
+				<EmailButton prev onClick={onClickToPrev}>
 					전 단계로 돌아가기
 				</EmailButton>
 				<EmailButton onClick={onClickToNext} disabled={!valid}>

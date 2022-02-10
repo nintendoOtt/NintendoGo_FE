@@ -48,5 +48,6 @@ export const MakePartyBtn = styled(Button)`
 	padding: 10px 0;
 	border-radius: 5px;
 	font-weight: 600;
+	color: #fff;
 	font-size: ${({ theme }) => theme.fontSizes.xl};
 `
