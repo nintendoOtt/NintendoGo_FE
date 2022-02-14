@@ -5,7 +5,7 @@ const Spinner = styled.div`
 	justify-content: center;
 	align-items: center;
 	height: 240px;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	bottom: 0;

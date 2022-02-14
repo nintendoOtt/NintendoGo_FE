@@ -14,7 +14,7 @@ const GlobalStyle = () => {
 				body {
 					background-color: ${theme.colors.bgColor};
 					color: ${theme.colors.textColor};
-					transition: 0.3s;
+					transition: 0.3s background-color;
 					line-height: 1.4;
 					font-family: 'Noto Sans KR', sans-serif;
 					font-size: 1em;
